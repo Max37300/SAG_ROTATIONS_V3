@@ -6,11 +6,8 @@ for /f "tokens=5" %%a in ('netstat -aon ^| findstr ":8080" ^| findstr "LISTENING
     taskkill /f /pid %%a >nul 2>&1
 )
 
-:: Lancer le serveur en arrière-plan
-start /b pythonw server.py >nul 2>&1
-if errorlevel 1 (
-    start /b python server.py >nul 2>&1
-)
+:: Lancer le serveur en arrière-plan (fenêtre minimisée)
+start /min python server.py
 
 :: Attendre 1 seconde puis ouvrir le navigateur
 timeout /t 1 /nobreak >nul
