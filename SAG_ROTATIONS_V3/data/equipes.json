@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "code": "A",
+    "nom": "Équipe A",
+    "couleur": "#1a3a6b"
+  },
+  {
+    "id": 2,
+    "code": "B",
+    "nom": "Équipe B",
+    "couleur": "#c0392b"
+  },
+  {
+    "id": 3,
+    "code": "C",
+    "nom": "Équipe C",
+    "couleur": "#27ae60"
+  },
+  {
+    "id": 4,
+    "code": "D",
+    "nom": "Équipe D",
+    "couleur": "#8e44ad"
+  },
+  {
+    "id": 1778684951084,
+    "code": "1",
+    "nom": "Équipe 1",
+    "couleur": "#aa7941"
+  },
+  {
+    "id": 1778684959357,
+    "code": "2",
+    "nom": "Équipe 2",
+    "couleur": "#ff9200"
+  },
+  {
+    "id": 1778684969638,
+    "code": "3",
+    "nom": "Équipe 3",
+    "couleur": "#ff40ff"
+  },
+  {
+    "id": 1778684983350,
+    "code": "4",
+    "nom": "Équipe 4",
+    "couleur": "#00fcff"
+  },
+  {
+    "id": 1778684990162,
+    "code": "5",
+    "nom": "Équipe 5",
+    "couleur": "#000000"
+  },
+  {
+    "id": 1778741983023,
+    "code": "EXT",
+    "nom": "Extérieur",
+    "couleur": "#0432ff"
+  },
+  {
+    "id": 1778742434439,
+    "code": "OFF",
+    "nom": "Officiers",
+    "couleur": "#ff2600"
+  },
+  {
+    "id": 1778742779385,
+    "code": "CDD",
+    "nom": "CDD SPP",
+    "couleur": "#fefb00"
+  }
+]

@@ -1,0 +1,683 @@
+[
+  {
+    "id": 1778683705700,
+    "nom": "VSAVM 1",
+    "type": "VSAV",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684866842
+            ]
+          },
+          {
+            "id": 2,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684742002,
+              1778684763332
+            ]
+          },
+          {
+            "id": 3,
+            "nom": "EQ",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684697436
+            ]
+          },
+          {
+            "id": 4,
+            "nom": "OBS",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778683867261,
+    "nom": "VSAV 2",
+    "type": "VSAV",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684866842
+            ]
+          },
+          {
+            "id": 2,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684742002
+            ]
+          },
+          {
+            "id": 3,
+            "nom": "EQ",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684697436
+            ]
+          },
+          {
+            "id": 4,
+            "nom": "OBS",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778683932287,
+    "nom": "FPTSR",
+    "type": "FPT",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1,
+        "nom": "Mode INC",
+        "piquets": [
+          {
+            "id": 1,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684874396
+            ]
+          },
+          {
+            "id": 2,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684779434
+            ]
+          },
+          {
+            "id": 3,
+            "nom": "CBAT 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684840712
+            ]
+          },
+          {
+            "id": 4,
+            "nom": "EBAT 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684728440
+            ]
+          },
+          {
+            "id": 5,
+            "nom": "CBAT 2",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684840712
+            ]
+          },
+          {
+            "id": 6,
+            "nom": "EBAT 2",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684728440
+            ]
+          },
+          {
+            "id": 7,
+            "nom": "CBAT 3",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684874396
+            ]
+          },
+          {
+            "id": 8,
+            "nom": "EBAT 3",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684728440
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nom": "Mode SR",
+        "piquets": [
+          {
+            "id": 1,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684853216
+            ]
+          },
+          {
+            "id": 2,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100
+            ]
+          },
+          {
+            "id": 3,
+            "nom": "EQ 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684705212
+            ]
+          },
+          {
+            "id": 4,
+            "nom": "EQ 2",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684705212
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684386819,
+    "nom": "FPTLOD",
+    "type": "FPTL",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684330065,
+        "nom": "Mode OD",
+        "piquets": [
+          {
+            "id": 1778684345450,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684858636
+            ]
+          },
+          {
+            "id": 1778684350759,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100
+            ]
+          },
+          {
+            "id": 1778684351412,
+            "nom": "EQ",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684716261
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1778684358356,
+        "nom": "Mode INC",
+        "piquets": [
+          {
+            "id": 1778684363209,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684874396
+            ]
+          },
+          {
+            "id": 1778684366726,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684779434
+            ]
+          },
+          {
+            "id": 1778684367318,
+            "nom": "CBAT 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684840712
+            ]
+          },
+          {
+            "id": 1778684368241,
+            "nom": "EBAT 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684728440
+            ]
+          },
+          {
+            "id": 1778684368706,
+            "nom": "CBAT 2",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684840712
+            ]
+          },
+          {
+            "id": 1778684369196,
+            "nom": "EBAT 2",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684728440
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684445277,
+    "nom": "BEA",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684427832,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778684438909,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684886515
+            ]
+          },
+          {
+            "id": 1778684439328,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684829184
+            ]
+          },
+          {
+            "id": 1778684439849,
+            "nom": "EQ",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684728440
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684459446,
+    "nom": "EPAS",
+    "type": "EPA",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684449042,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778684454030,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684880486
+            ]
+          },
+          {
+            "id": 1778684454441,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684810005
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684478249,
+    "nom": "CMEGP",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684465347,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778684472748,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684874396
+            ]
+          },
+          {
+            "id": 1778684473191,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684779434
+            ]
+          },
+          {
+            "id": 1778684473754,
+            "nom": "EQ",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684728440
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684557667,
+    "nom": "CCFM",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684542480,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778684549000,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684901749,
+              1778684906067
+            ]
+          },
+          {
+            "id": 1778684549364,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684751100,
+              1778684779434,
+              1778684789478
+            ]
+          },
+          {
+            "id": 1778684549929,
+            "nom": "EQ 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684898089
+            ]
+          },
+          {
+            "id": 1778684550422,
+            "nom": "EQ 2",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684898089
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778684605076,
+    "nom": "VTU",
+    "type": "VTU",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778684565971,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778684572517,
+            "nom": "PASS 1",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684584976,
+            "nom": "PASS 2",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684587023,
+            "nom": "PASS 3",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684588922,
+            "nom": "PASS 4",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684590872,
+            "nom": "PASS 5",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684592379,
+            "nom": "PASS 6",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778684594246,
+            "nom": "PASS 7",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      },
+      {
+        "id": 1778684596363,
+        "nom": "Mode VPR",
+        "piquets": [
+          {
+            "id": 1778684600141,
+            "nom": "CA",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684858636
+            ]
+          },
+          {
+            "id": 1778684601619,
+            "nom": "COND",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684742002
+            ]
+          },
+          {
+            "id": 1778684603726,
+            "nom": "EQ",
+            "obligatoire": false,
+            "uvRequises": [
+              1778684716261
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778696536319,
+    "nom": "BLS",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778696510903,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778696520519,
+            "nom": "PASS 1",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684796857
+            ]
+          },
+          {
+            "id": 1778696521385,
+            "nom": "PASS 2",
+            "obligatoire": true,
+            "uvRequises": [
+              1778684796857
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778696564851,
+    "nom": "VLHR",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778696541019,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778696547418,
+            "nom": "PASS 1",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696550635,
+            "nom": "PASS 2",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696551352,
+            "nom": "PASS 3",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696551983,
+            "nom": "PASS 4",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778696608484,
+    "nom": "VLCG",
+    "type": "Autre",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778696583369,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778696589468,
+            "nom": "PASS 1",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696590000,
+            "nom": "PASS 2",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696590719,
+            "nom": "PASS 3",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696591335,
+            "nom": "PASS 4",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696595250,
+            "nom": "PASS 5",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1778696634584,
+    "nom": "VLOG",
+    "type": "VSAV",
+    "actif": true,
+    "modes": [
+      {
+        "id": 1778696623152,
+        "nom": "Standard",
+        "piquets": [
+          {
+            "id": 1778696627934,
+            "nom": "PASS 1",
+            "obligatoire": false,
+            "uvRequises": []
+          },
+          {
+            "id": 1778696628668,
+            "nom": "PASS 2",
+            "obligatoire": false,
+            "uvRequises": []
+          }
+        ]
+      }
+    ]
+  }
+]

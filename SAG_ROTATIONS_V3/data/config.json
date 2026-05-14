@@ -1,0 +1,13 @@
+{
+  "centre": "Sud Agglo",
+  "departement": "SDIS",
+  "annee_courante": 2026,
+  "groupes": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "duree_garde_h": 24,
+  "theme": "dark"
+}

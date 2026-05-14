@@ -1,0 +1,8465 @@
+{
+  "annee": 2026,
+  "groupes": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "rotations": [
+    {
+      "date": "2026-05-13",
+      "groupe": "A"
+    }
+  ],
+  "gardes": {
+    "2026-01-01": [
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": "SOG"
+      }
+    ],
+    "2026-01-02": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "ktbhvzuy8u",
+        "type": "4VJ",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": null,
+        "role": "SOG"
+      }
+    ],
+    "2026-01-03": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-04": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-05": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-06": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-01-07": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6y4i8j8zn2h",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "jkxadrzrvz",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-08": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-09": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4isoe5bl3ws",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-10": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-11": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-12": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "rpsid0w1w9d",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-13": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yvbvvb145mj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zrg91z2mtrr",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-14": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "rpsid0w1w9d",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-15": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "czo4uswiviw",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "bj3c9skgcuu",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-16": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jkxadrzrvz",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-17": [
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-18": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-19": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "czo4uswiviw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zrg91z2mtrr",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-20": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-21": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-22": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-01-23": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-24": [
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-25": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-26": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-27": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y8snhhgiqa",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-01-28": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-29": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yvbvvb145mj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y8snhhgiqa",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-01-30": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "4isoe5bl3ws",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-01-31": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-01": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-02": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-03": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-02-04": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yvbvvb145mj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-05": [
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-06": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-07": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-08": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      }
+    ],
+    "2026-02-09": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-10": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-02-11": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GJ2",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-12": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6y4i8j8zn2h",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zrg91z2mtrr",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-13": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "jkxadrzrvz",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bj3c9skgcuu",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-14": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-15": [
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-16": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-17": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-18": [
+      {
+        "agentId": "6y4i8j8zn2h",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-19": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-20": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jkxadrzrvz",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-21": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "GJ1",
+        "role": null
+      },
+      {
+        "agentId": "amyvncsck8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": "STAT"
+      }
+    ],
+    "2026-02-22": [
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "x86rjglelta",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-23": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-24": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-02-25": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-26": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yvbvvb145mj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-02-27": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "amyvncsck8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-02-28": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-01": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-02": [
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-03": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-04": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-05": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1txsa8tdguj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-03-06": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-07": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-08": [
+      {
+        "agentId": "svopyp24ym",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      }
+    ],
+    "2026-03-09": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-10": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-11": [
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-12": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-13": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": "STAT"
+      }
+    ],
+    "2026-03-14": [
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-15": [
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-16": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-17": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-18": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ1",
+        "role": null
+      },
+      {
+        "agentId": "6y4i8j8zn2h",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-19": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yvbvvb145mj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-20": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GJ1",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "taye0knecv9",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GJ1",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-03-21": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-22": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-23": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "rpsid0w1w9d",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-24": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-25": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ1",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-03-26": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zrg91z2mtrr",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "mo00mm598521y",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-27": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "ztlntvpku7f",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-03-28": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "amyvncsck8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-29": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-03-30": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-03-31": [
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6y4i8j8zn2h",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-01": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-02": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "rpsid0w1w9d",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ok9l5bh0lrk",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-04-03": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "GJ",
+        "role": "STAT"
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "igqcmo68v3",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-04-04": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hpwn5p4khb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-05": [
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "jktp9aqmdm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-06": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "nnjjyyv3u8a",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-07": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zglxf6rrqxm",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-04-08": [
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-04-09": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "czo4uswiviw",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-04-10": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5b08pjoykqw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "iqq6e272fds",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6drxzepi12g",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "he4qya594ec",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yjqy1rjt2x8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "03mzb39p1sfk",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-11": [
+      {
+        "agentId": "ohhebfb2d2j",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "j7xkuh9zaz",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5ih2h2dj2ak",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "84qbypv98tg",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yw0edxm7d89",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-12": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s3j54mh84a",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zndkkmft8e",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "y2qctf6dmq",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-13": [
+      {
+        "agentId": "kjmbuyht",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ktbhvzuy8u",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "wl26aekz3y",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "2qq9lp3ut67",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-04-14": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "s8oj4wqkfni",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "5epw4ap21xb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "aypmkeyldi9",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "io8ru8q7w9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "dw3tfqxw6l6",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zzuvyc1v9w",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yw0edxm7d89",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "mnyfj04ed2zem",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-15": [
+      {
+        "agentId": "sjmrxxbeod",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "o2eya5kysff",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "09m9h8edk025",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "n2a0q9y7sx",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5tl4zfjcx3o",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "hhdwpghm2lv",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "00lpnysy4nu8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kux7j163k5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9wg8sxrpsh7",
+        "type": "GN",
+        "role": null
+      }
+    ],
+    "2026-04-16": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gzyaiwvpi9t",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "5b08pjoykqw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kh8qaio65s",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ktbhvzuy8u",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3gx6r7mzwrv",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "xjww59p0jp",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "bizsc05kqg7",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "u19d3sjkv5m",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "gj3wc2gqoqd",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "gza4ciiigs4",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-04-28": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "t07hwmxidkm",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "q78vl8ls2a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "9hp0lnnyuqm",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "lfa84svv70c",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "mnyfj04ed2zem",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "czo4uswiviw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "i9m2n4yoaws",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "ew1aq5x3z6m",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1eo2gw86xeu",
+        "type": "G24",
+        "role": null
+      }
+    ],
+    "2026-05-14": [
+      {
+        "agentId": "v1kpkm4fp28",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "3uxdvwet724",
+        "type": "G24",
+        "role": "STAT"
+      },
+      {
+        "agentId": "6ykduez5xd",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "4k97824uvby",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "v115ctvkvyf",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "5vx5hjzcfb8",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "0887hh3af23",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vrlaoe0edb",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "8ui6o5vplf5",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "b10xnc0ng2n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "smg2ms8jxgs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yh56fbsfho",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "2fehfnl6ejd",
+        "type": "GJ",
+        "role": null
+      }
+    ],
+    "2026-05-13": [
+      {
+        "agentId": "0vddajdho3rj",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "zf8wxlxyrn9",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "kks3c0ut42l",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "vhaqep0mvs",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "bbdpj7owhw",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "mnyfj04ed2zem",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yr8n9aqjfw",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "yms1cleazf",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "20eqnklpadu",
+        "type": "G24",
+        "role": "SOG"
+      },
+      {
+        "agentId": "fm67tyhd17n",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "lsrpq9q4ek8",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "b5lbrjysb65",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "khzgrhrfxh",
+        "type": "GJ",
+        "role": null
+      },
+      {
+        "agentId": "yw0edxm7d89",
+        "type": "G24",
+        "role": null
+      },
+      {
+        "agentId": "1vuccfekq7a",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "zyem41bhctj",
+        "type": "GN",
+        "role": null
+      },
+      {
+        "agentId": "7eyrymtpfp",
+        "type": "GN",
+        "role": null
+      }
+    ]
+  }
+}

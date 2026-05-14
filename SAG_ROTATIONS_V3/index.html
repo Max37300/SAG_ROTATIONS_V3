@@ -1,0 +1,3228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAG Rotations V3 — Sud Agglo</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sag: {
+              navy:    '#0B1629',
+              navylt:  '#132040',
+              gold:    '#C0392B',
+              goldlt:  '#E74C3C',
+              red:     '#C0392B',
+              redlt:   '#E74C3C',
+              blue:    '#1A3A6B',
+              border:  '#1E2D47',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; }
+
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    /* Scrollbar sidebar */
+    #sidebar::-webkit-scrollbar { width: 4px; }
+    #sidebar::-webkit-scrollbar-track { background: transparent; }
+    #sidebar::-webkit-scrollbar-thumb { background: #1E2D47; border-radius: 2px; }
+
+    /* Scrollbar main */
+    #main-content::-webkit-scrollbar { width: 6px; }
+    #main-content::-webkit-scrollbar-track { background: #f1f5f9; }
+    #main-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    /* Nav active pulse */
+    .nav-item.active .nav-indicator {
+      opacity: 1;
+    }
+
+    /* Page transition */
+    .page { animation: fadeIn 0.15s ease; overflow-y: auto; padding: 1.5rem; flex: 1; min-height: 0; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Badge groupe */
+    .badge-A { background: #1A3A6B; color: #fff; }
+    .badge-B { background: #C0392B; color: #fff; }
+    .badge-C { background: #27AE60; color: #fff; }
+    .badge-D { background: #8E44AD; color: #fff; }
+
+    /* Sidebar collapse */
+    #sidebar { transition: width 0.25s ease; }
+    body.collapsed #sidebar { width: 4.5rem; }
+    body.collapsed .nav-label,
+    body.collapsed .sidebar-footer-text { display: none; }
+    body.collapsed .nav-item { justify-content: center; padding-left: 0; padding-right: 0; }
+    body.collapsed .nav-indicator { display: none; }
+
+    /* UV catégories dans le tableau */
+    .uv-cat { position: relative; display: inline-flex; align-items: center; gap: 3px; }
+    .uv-cat-badge {
+      display: inline-flex; align-items: center; gap: 3px;
+      padding: 2px 7px; border-radius: 9999px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+      cursor: default;
+    }
+    .uv-tooltip {
+      display: none;
+      position: absolute; bottom: calc(100% + 6px); left: 0;
+      background: #1e293b; color: #fff;
+      border-radius: 8px; padding: 8px 10px;
+      font-size: 0.7rem; white-space: nowrap;
+      z-index: 50; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      pointer-events: none; min-width: 120px;
+    }
+    .uv-tooltip::after {
+      content: ''; position: absolute; top: 100%; left: 14px;
+      border: 5px solid transparent; border-top-color: #1e293b;
+    }
+    .uv-cat:hover .uv-tooltip { display: block; }
+
+    /* Pills toggle (fonctions / UV) */
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      letter-spacing: 0.02em;
+    }
+    .pill-tag:hover {
+      border-color: #C0392B;
+      color: #C0392B;
+      background: #fff5f5;
+    }
+    .pill-tag.active {
+      background: #C0392B;
+      border-color: #C0392B;
+      color: #fff;
+      box-shadow: 0 1px 4px rgba(192,57,43,0.25);
+    }
+
+    /* Toast */
+    #toast {
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    #toast.hidden { opacity: 0; transform: translateY(10px); pointer-events: none; }
+  </style>
+</head>
+
+<body class="bg-gray-100 flex h-screen overflow-hidden text-sm">
+
+  <!-- ═══════════════════════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════════════════════ -->
+  <aside id="sidebar"
+         class="flex flex-col w-64 min-h-screen bg-sag-navy shrink-0 overflow-y-auto overflow-x-hidden z-20">
+
+    <!-- Logo -->
+    <div class="flex items-center justify-center px-4 py-5 border-b border-sag-border">
+      <img id="logo-img" src="assets/Ecusson%20SUD%20AGGLO%20FINAL.png" alt="Logo SAG"
+           class="w-40 h-auto object-contain drop-shadow-lg"
+           onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex'"/>
+      <div id="logo-fallback"
+           class="w-20 h-20 hidden items-center justify-center bg-sag-navylt text-sag-gold font-bold text-lg">
+        SAG
+      </div>
+    </div>
+
+    <!-- Navigation principale -->
+    <nav class="flex-1 px-2 pt-4 pb-2 space-y-0.5">
+
+      <p class="text-gray-500 text-xs font-semibold uppercase tracking-widest px-3 mb-2 nav-label">
+        Principal
+      </p>
+
+      <a href="#" data-page="dashboard"
+         class="nav-item active flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-white hover:bg-sag-navylt transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 text-sag-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        <span class="nav-label font-medium">Tableau de bord</span>
+      </a>
+
+      <a href="#" data-page="planning"
+         class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-gray-300 hover:bg-sag-navylt hover:text-white transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <span class="nav-label font-medium">Planning</span>
+      </a>
+
+      <a href="#" data-page="personnel"
+         class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-gray-300 hover:bg-sag-navylt hover:text-white transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="nav-label font-medium">Ressources humaines</span>
+      </a>
+
+      <a href="#" data-page="interventions"
+         class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-gray-300 hover:bg-sag-navylt hover:text-white transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+        </svg>
+        <span class="nav-label font-medium">Interventions</span>
+      </a>
+
+      <div class="pt-4">
+        <p class="text-gray-500 text-xs font-semibold uppercase tracking-widest px-3 mb-2 nav-label">
+          Système
+        </p>
+      </div>
+
+      <a href="#" data-page="debug"
+         class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-gray-300 hover:bg-sag-navylt hover:text-white transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="nav-label font-medium">Debug</span>
+      </a>
+
+      <a href="#" data-page="parametres"
+         class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer
+                text-gray-300 hover:bg-sag-navylt hover:text-white transition-colors relative group">
+        <span class="nav-indicator absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-sag-gold rounded-r-full opacity-0 transition-opacity"></span>
+        <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="nav-label font-medium">Paramètres</span>
+      </a>
+    </nav>
+
+    <!-- Footer sidebar -->
+    <div class="px-4 py-4 border-t border-sag-border">
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
+        <span class="sidebar-footer-text text-gray-400 text-xs">Serveur local actif</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ZONE PRINCIPALE
+  ═══════════════════════════════════════════════════════ -->
+  <div class="flex flex-col flex-1 min-w-0 overflow-hidden">
+
+    <!-- Topbar -->
+    <header class="flex items-center justify-between h-14 px-6 bg-white border-b border-gray-200 shrink-0 shadow-sm z-10">
+      <div class="flex items-center gap-3">
+        <!-- Bouton collapse sidebar -->
+        <button id="btn-toggle-sidebar"
+                class="p-1.5 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+                title="Réduire la sidebar">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Breadcrumb / titre page -->
+        <div class="flex items-center gap-2 text-gray-500">
+          <span class="text-xs">SAG</span>
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span id="page-title" class="text-gray-800 font-semibold text-sm">Tableau de bord</span>
+        </div>
+      </div>
+
+      <!-- Actions topbar -->
+      <div class="flex items-center gap-2">
+        <!-- Date -->
+        <div class="hidden sm:flex items-center gap-2 text-gray-400 text-xs">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span id="current-date"></span>
+        </div>
+
+        <div class="w-px h-6 bg-gray-200 mx-1"></div>
+
+        <!-- Groupe en garde -->
+        <div class="flex items-center gap-2">
+          <span class="text-gray-400 text-xs hidden sm:inline">Groupe en garde :</span>
+          <span id="groupe-garde"
+                class="badge-A px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wide">
+            —
+          </span>
+        </div>
+
+        <div class="w-px h-6 bg-gray-200 mx-1"></div>
+
+        <!-- Avatar utilisateur -->
+        <div class="w-8 h-8 rounded-full bg-sag-navy border border-sag-gold flex items-center justify-center text-sag-gold font-bold text-xs select-none">
+          SP
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenu principal scrollable -->
+    <main id="main-content" class="flex-1 flex flex-col overflow-hidden bg-gray-50">
+      <div id="page-content" class="flex-1 min-h-0 flex flex-col">
+        <!-- Injecté par JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast"
+       class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3
+              bg-white rounded-xl shadow-xl border border-gray-100 text-sm min-w-[220px]">
+    <span id="toast-icon" class="text-lg">✓</span>
+    <span id="toast-msg" class="text-gray-700 font-medium"></span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TEMPLATES DES PAGES
+  ═══════════════════════════════════════════════════════ -->
+
+  <!-- DASHBOARD -->
+  <template id="tpl-dashboard">
+    <div class="page space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">Tableau de bord</h1>
+          <p class="text-gray-400 text-xs mt-0.5">Vue d'ensemble — <span id="db-date"></span></p>
+        </div>
+      </div>
+
+      <!-- Cartes KPI -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-gray-400 text-xs font-medium uppercase tracking-wide">Ressources humaines</span>
+            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+              <svg class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+          </div>
+          <p id="kpi-personnel" class="text-2xl font-bold text-gray-800">—</p>
+          <p class="text-gray-400 text-xs mt-0.5">sapeurs-pompiers</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-gray-400 text-xs font-medium uppercase tracking-wide">Groupe garde</span>
+            <div class="w-8 h-8 rounded-lg bg-sag-gold/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-sag-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+          </div>
+          <p id="kpi-groupe" class="text-2xl font-bold text-gray-800">—</p>
+          <p class="text-gray-400 text-xs mt-0.5">en service aujourd'hui</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-gray-400 text-xs font-medium uppercase tracking-wide">Rotations</span>
+            <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
+              <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+          </div>
+          <p id="kpi-rotations" class="text-2xl font-bold text-gray-800">—</p>
+          <p class="text-gray-400 text-xs mt-0.5">planifiées</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-gray-400 text-xs font-medium uppercase tracking-wide">Centre</span>
+            <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center">
+              <svg class="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+              </svg>
+            </div>
+          </div>
+          <p id="kpi-centre" class="text-2xl font-bold text-gray-800">—</p>
+          <p class="text-gray-400 text-xs mt-0.5">Sud Agglo</p>
+        </div>
+      </div>
+
+      <!-- Calendrier du mois + Personnel en garde -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+        <!-- Mini calendrier -->
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold text-gray-700 text-sm">Rotations du mois</h2>
+            <a href="#" data-page="planning" class="text-sag-gold text-xs hover:underline">Voir le planning →</a>
+          </div>
+          <div id="mini-calendrier" class="text-center text-gray-300 text-sm py-4">
+            Chargement…
+          </div>
+        </div>
+
+        <!-- Personnel en garde -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+          <h2 class="font-semibold text-gray-700 text-sm mb-4">Personnel disponible</h2>
+          <div id="personnel-garde" class="space-y-2">
+            <p class="text-gray-300 text-xs text-center py-4">Chargement…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- PLANNING -->
+  <template id="tpl-planning">
+    <div class="page flex gap-5 items-start" style="align-items:stretch">
+
+      <!-- ── Colonne gauche : calendrier ── -->
+      <div class="flex flex-col gap-3 shrink-0 w-80">
+
+        <!-- Header + légende -->
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">Planning des gardes</h1>
+          <div class="flex items-center gap-2 flex-wrap mt-2">
+            <span class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="inline-block w-3 h-3 rounded-full bg-gray-300"></span>Aucun agent</span>
+            <span class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="inline-block w-3 h-3 rounded-full bg-orange-400"></span>Agents affectés</span>
+            <span class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="inline-block w-3 h-3 rounded-full border-2 border-red-500 bg-white"></span>Aujourd'hui</span>
+          </div>
+        </div>
+
+        <!-- Sélecteur mois -->
+        <div class="flex items-center gap-2">
+          <button id="prev-month" class="p-1.5 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors text-gray-500">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <span id="mois-label" class="flex-1 text-center font-semibold text-gray-700 text-sm capitalize"></span>
+          <button id="next-month" class="p-1.5 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors text-gray-500">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <!-- Calendrier -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div id="calendrier-planning"></div>
+        </div>
+      </div>
+
+      <!-- ── Colonne droite : détail journée ── -->
+      <div class="flex-1 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden" style="height:100%">
+
+        <!-- Header journée + bouton ajouter -->
+        <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between gap-3">
+          <div>
+            <p id="panel-jour-titre" class="font-bold text-gray-800 text-base capitalize">Sélectionnez un jour</p>
+            <p id="panel-jour-count" class="text-gray-400 text-xs mt-0.5"></p>
+          </div>
+          <button id="btn-open-add" onclick="App.pages.planning.openAddModal()"
+                  class="hidden flex items-center gap-1.5 px-3 py-1.5 bg-sag-gold hover:bg-sag-goldlt text-white font-semibold rounded-lg text-xs transition-colors shrink-0">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+            </svg>
+            Ajouter
+          </button>
+        </div>
+
+        <!-- Récapitulatif par type de garde -->
+        <div id="recap-types" class="hidden px-5 pt-3 pb-2 border-b border-gray-50">
+          <div id="recap-types-inner" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Liste affectations -->
+        <div id="jour-liste" class="flex-1 overflow-y-auto px-5 py-3 space-y-2 min-h-0">
+          <p class="text-gray-300 text-sm text-center py-8">Cliquez sur un jour dans le calendrier</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal ajout agent -->
+    <div id="modal-add-agent" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 id="modal-add-titre" class="font-bold text-gray-800 text-base"></h3>
+          <button onclick="document.getElementById('modal-add-agent').classList.add('hidden')"
+                  class="text-gray-300 hover:text-gray-500 transition-colors text-lg leading-none">✕</button>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Recherche agent -->
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Agent</label>
+            <div class="relative mb-2">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <input id="search-agent-planning" type="text" placeholder="Rechercher…"
+                     class="w-full pl-8 pr-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"
+                     oninput="App.pages.planning.filterAgents()"/>
+            </div>
+            <select id="select-agent-planning" size="5"
+                    class="w-full rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"></select>
+          </div>
+
+          <!-- Type de garde -->
+          <div>
+            <p class="text-xs font-medium text-gray-600 mb-1.5">Type de garde <span class="text-red-400">*</span></p>
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" class="garde-type-pill pill-tag" data-value="G24">G24</button>
+              <button type="button" class="garde-type-pill pill-tag" data-value="GJ">GJ</button>
+              <button type="button" class="garde-type-pill pill-tag" data-value="GN">GN</button>
+              <button type="button" class="garde-type-pill pill-tag" data-value="GJ1">GJ1</button>
+              <button type="button" class="garde-type-pill pill-tag" data-value="GJ2">GJ2</button>
+            </div>
+          </div>
+
+          <!-- Rôle facultatif -->
+          <div>
+            <p class="text-xs font-medium text-gray-600 mb-1.5">Rôle facultatif</p>
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" class="garde-role-pill pill-tag" data-value="SOG">SOG</button>
+              <button type="button" class="garde-role-pill pill-tag" data-value="STAT">STAT</button>
+              <button type="button" class="garde-role-pill pill-tag" data-value="EAP">EAP</button>
+              <button type="button" class="garde-role-pill pill-tag" data-value="BNSSA">BNSSA</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+          <button onclick="document.getElementById('modal-add-agent').classList.add('hidden')"
+                  class="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.planning.addAffectation()"
+                  class="flex-1 px-4 py-2 rounded-lg bg-sag-gold hover:bg-sag-goldlt text-white font-semibold text-sm transition-colors">
+            Ajouter
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- PERSONNEL -->
+  <template id="tpl-personnel">
+    <div class="page space-y-5">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">Ressources humaines</h1>
+          <p class="text-gray-400 text-xs mt-0.5">Gestion des agents</p>
+        </div>
+        <button onclick="App.pages.personnel.openAdd()"
+                class="flex items-center gap-2 px-4 py-2 bg-sag-gold hover:bg-sag-goldlt text-white font-semibold rounded-lg text-sm transition-colors shadow-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+          Ajouter
+        </button>
+      </div>
+
+      <!-- Filtres -->
+      <div class="flex items-center gap-3 flex-wrap">
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input id="search-personnel" type="text" placeholder="Rechercher…"
+                 class="pl-9 pr-4 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold w-52"
+                 oninput="App.pages.personnel.filter()"/>
+        </div>
+        <select id="filter-groupe"
+                class="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"
+                onchange="App.pages.personnel.filter()">
+          <option value="">Tous les groupes</option>
+        </select>
+        <select id="filter-statut"
+                class="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"
+                onchange="App.pages.personnel.filter()">
+          <option value="">Tous les statuts</option>
+          <option value="SPV">SPV</option>
+          <option value="SPP">SPP</option>
+        </select>
+        <span id="count-personnel" class="text-gray-400 text-xs ml-auto"></span>
+      </div>
+
+      <!-- Tableau -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-100 bg-gray-50">
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Nom</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Groupe</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Statut</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide hidden md:table-cell">Fonctions</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide hidden lg:table-cell">UV</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide hidden md:table-cell">Âge</th>
+              <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide hidden md:table-cell">Facteur</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody id="table-personnel">
+            <tr><td colspan="8" class="text-center py-8 text-gray-300">Chargement…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal personnel -->
+    <div id="modal-personnel" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl mx-4 p-6 max-h-[90vh] overflow-y-auto">
+        <h3 id="modal-pers-title" class="font-bold text-gray-800 text-base mb-5">Nouvel agent</h3>
+        <input type="hidden" id="pers-id"/>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Nom *</label>
+            <input type="text" id="pers-nom"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold uppercase"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Prénom *</label>
+            <input type="text" id="pers-prenom"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Grade *</label>
+            <div class="flex items-center gap-2">
+              <select id="pers-grade"
+                      onchange="App.pages.personnel.updateGradePreview()"
+                      class="flex-1 px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold text-gray-700">
+                <option value="" disabled selected>— Sélectionner —</option>
+                <option>Sapeur 2ème classe</option>
+                <option>Sapeur 1ère classe</option>
+                <option>Caporal</option>
+                <option>Caporal-chef</option>
+                <option>Sergent</option>
+                <option>Sergent-chef</option>
+                <option>Adjudant</option>
+                <option>Adjudant-chef</option>
+                <option>Lieutenant</option>
+                <option>Capitaine</option>
+                <option>Commandant</option>
+                <option>Lieutenant-colonel</option>
+                <option>Colonel</option>
+              </select>
+              <div id="pers-grade-preview"
+                   class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 border border-gray-100 shrink-0">
+                <span class="text-gray-200 text-xs">—</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Groupe *</label>
+            <select id="pers-groupe"
+                    class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold text-gray-700">
+              <option value="" disabled selected>— Sélectionner —</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Date de naissance</label>
+            <input type="date" id="pers-ddn"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold text-gray-700"
+                   oninput="App.pages.personnel.updateAgeDisplay()"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Statut *</label>
+            <select id="pers-statut"
+                    class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold text-gray-700">
+              <option value="" disabled selected>— Sélectionner —</option>
+              <option value="SPV">SPV — Sapeur-pompier volontaire</option>
+              <option value="SPP">SPP — Sapeur-pompier professionnel</option>
+            </select>
+          </div>
+          <div class="col-span-2">
+            <label class="block text-xs font-medium text-gray-600 mb-2">Fonctions</label>
+            <div class="flex flex-wrap gap-2" id="pers-fonctions-group">
+              <button type="button" class="pers-fonction-pill pill-tag" data-value="OBS">OBS</button>
+              <button type="button" class="pers-fonction-pill pill-tag" data-value="EQ">EQ</button>
+              <button type="button" class="pers-fonction-pill pill-tag" data-value="CE">CE</button>
+              <button type="button" class="pers-fonction-pill pill-tag" data-value="CA1E">CA1E</button>
+              <button type="button" class="pers-fonction-pill pill-tag" data-value="CATE">CATE</button>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <label class="block text-xs font-medium text-gray-600 mb-2">Unités de valeur</label>
+            <div class="flex flex-wrap gap-2 max-h-40 overflow-y-auto pr-1" id="pers-uv-group">
+            </div>
+          </div>
+          <div class="col-span-2 grid grid-cols-2 gap-4 bg-gray-50 rounded-lg p-3">
+            <div>
+              <p class="text-xs font-medium text-gray-500 mb-1">Âge (calculé)</p>
+              <p id="pers-age-display" class="text-sm font-semibold text-gray-800">—</p>
+            </div>
+            <div>
+              <p class="text-xs font-medium text-gray-500 mb-1">Facteur âge</p>
+              <p id="pers-facteur-display" class="text-sm font-semibold text-gray-800">—</p>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="pers-actif" checked class="w-4 h-4 accent-sag-gold"/>
+              <span class="text-sm text-gray-700">Actif</span>
+            </label>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-6">
+          <button onclick="document.getElementById('modal-personnel').classList.add('hidden')"
+                  class="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.personnel.save()"
+                  class="flex-1 px-4 py-2 rounded-lg bg-sag-gold hover:bg-sag-goldlt text-white font-semibold text-sm transition-colors">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- VÉHICULES -->
+  <template id="tpl-vehicules">
+    <div class="page space-y-5">
+      <h1 class="text-xl font-bold text-gray-800">Véhicules</h1>
+      <p class="text-gray-400 text-sm">Module en cours de développement.</p>
+      <div class="bg-white rounded-xl p-12 text-center border border-dashed border-gray-200">
+        <svg class="w-12 h-12 text-gray-200 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 17a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4zM3 17V9l4-6h10l4 6v8M3 13h18"/>
+        </svg>
+        <p class="text-gray-300 text-sm">Bientôt disponible</p>
+      </div>
+    </div>
+  </template>
+
+  <!-- STATISTIQUES -->
+  <template id="tpl-statistiques">
+    <div class="page space-y-5">
+      <h1 class="text-xl font-bold text-gray-800">Statistiques</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+          <h2 class="font-semibold text-gray-700 text-sm mb-4">Répartition par groupe</h2>
+          <div id="stat-groupes" class="space-y-3"></div>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+          <h2 class="font-semibold text-gray-700 text-sm mb-4">Répartition par grade</h2>
+          <div id="stat-grades" class="space-y-3"></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- PARAMÈTRES -->
+  <template id="tpl-parametres">
+    <div class="page space-y-5">
+      <h1 class="text-xl font-bold text-gray-800">Paramètres</h1>
+
+      <!-- Onglets -->
+      <div class="flex gap-0 border-b border-gray-200">
+        <button class="param-tab px-5 py-2.5 text-sm font-medium border-b-2 transition-colors"
+                data-tab="vehicules">Véhicules</button>
+        <button class="param-tab px-5 py-2.5 text-sm font-medium border-b-2 transition-colors"
+                data-tab="uv">UV</button>
+        <button class="param-tab px-5 py-2.5 text-sm font-medium border-b-2 transition-colors"
+                data-tab="equipes">Équipes</button>
+      </div>
+
+      <!-- ── TAB VÉHICULES ─────────────────────────────── -->
+      <div id="tab-vehicules" class="param-panel space-y-4">
+        <div class="flex items-center justify-between">
+          <p class="text-gray-400 text-xs">Gérez vos engins et leurs piquets (rôles par véhicule).</p>
+          <button onclick="App.pages.parametres.veh.openAdd()"
+                  class="flex items-center gap-2 px-4 py-2 bg-sag-gold hover:bg-sag-goldlt text-white font-semibold rounded-lg text-sm transition-colors shadow-sm">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+            </svg>
+            Ajouter un véhicule
+          </button>
+        </div>
+
+        <div id="veh-list" class="space-y-3"></div>
+      </div>
+
+      <!-- ── TAB UV ────────────────────────────────────── -->
+      <div id="tab-uv" class="param-panel hidden space-y-4">
+        <div class="flex items-center justify-between">
+          <p class="text-gray-400 text-xs">Unités de valeurs (qualifications des sapeurs-pompiers).</p>
+          <button onclick="App.pages.parametres.uv.openAdd()"
+                  class="flex items-center gap-2 px-4 py-2 bg-sag-gold hover:bg-sag-goldlt text-white font-semibold rounded-lg text-sm transition-colors shadow-sm">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+            </svg>
+            Ajouter une UV
+          </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-gray-100 bg-gray-50">
+                <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Code</th>
+                <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Libellé</th>
+                <th class="px-4 py-3 w-20"></th>
+              </tr>
+            </thead>
+            <tbody id="uv-list"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── TAB ÉQUIPES ───────────────────────────────── -->
+      <div id="tab-equipes" class="param-panel hidden space-y-4">
+        <div class="flex items-center justify-between">
+          <p class="text-gray-400 text-xs">Définissez les équipes / groupes de garde.</p>
+          <button onclick="App.pages.parametres.eq.openAdd()"
+                  class="flex items-center gap-2 px-4 py-2 bg-sag-gold hover:bg-sag-goldlt text-white font-semibold rounded-lg text-sm transition-colors shadow-sm">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+            </svg>
+            Ajouter une équipe
+          </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-gray-100 bg-gray-50">
+                <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Code</th>
+                <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Nom</th>
+                <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Couleur</th>
+                <th class="px-4 py-3 w-20"></th>
+              </tr>
+            </thead>
+            <tbody id="eq-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MODAL VÉHICULE ════════════════════════════════ -->
+    <div id="modal-veh" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 p-6 max-h-[90vh] flex flex-col">
+        <h3 id="modal-veh-title" class="font-bold text-gray-800 text-base mb-5 shrink-0">Nouveau véhicule</h3>
+        <input type="hidden" id="veh-id"/>
+
+        <!-- Infos véhicule -->
+        <div class="grid grid-cols-2 gap-4 shrink-0">
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Nom *</label>
+            <input type="text" id="veh-nom" placeholder="ex: VSAV 1"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Type *</label>
+            <select id="veh-type"
+                    class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold">
+              <option>VSAV</option>
+              <option>FPT</option>
+              <option>FPTL</option>
+              <option>FPTGP</option>
+              <option>EPA</option>
+              <option>EPM</option>
+              <option>VSR</option>
+              <option>VTU</option>
+              <option>CCDTP</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="col-span-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="veh-actif" checked class="w-4 h-4 accent-sag-gold"/>
+              <span class="text-sm text-gray-700">Actif</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Modes -->
+        <div class="mt-5 flex-1 overflow-y-auto min-h-0 flex flex-col">
+
+          <!-- En-tête modes -->
+          <div class="flex items-center justify-between mb-2 shrink-0">
+            <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Modes d'engagement</span>
+            <button onclick="App.pages.parametres.veh.addMode()"
+                    class="flex items-center gap-1 text-xs text-sag-gold hover:text-sag-goldlt font-medium transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+              </svg>
+              Ajouter un mode
+            </button>
+          </div>
+
+          <!-- Onglets des modes -->
+          <div id="mode-tabs" class="flex gap-1 flex-wrap shrink-0 mb-3"></div>
+
+          <!-- Contenu du mode actif -->
+          <div class="flex-1 overflow-y-auto border border-gray-100 rounded-xl p-3 min-h-0">
+            <!-- Nom du mode -->
+            <div class="flex items-center gap-2 mb-3">
+              <input type="text" id="mode-nom-input" placeholder="Nom du mode…"
+                     oninput="App.pages.parametres.veh.renameMode(this.value)"
+                     class="flex-1 px-3 py-1.5 rounded-lg border border-gray-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+              <button id="mode-delete-btn"
+                      onclick="App.pages.parametres.veh.removeMode()"
+                      class="p-1.5 text-gray-300 hover:text-red-400 rounded transition-colors shrink-0" title="Supprimer ce mode">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+              </button>
+            </div>
+            <!-- Piquets du mode -->
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-400 font-medium">Piquets</span>
+              <button onclick="App.pages.parametres.veh.addPiquet()"
+                      class="flex items-center gap-1 text-xs text-sag-gold hover:text-sag-goldlt font-medium transition-colors">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+                Ajouter
+              </button>
+            </div>
+            <div id="piquets-list" class="space-y-1.5"></div>
+            <p id="piquets-empty" class="text-gray-300 text-xs text-center py-3 hidden">Aucun piquet — cliquez sur "Ajouter"</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-5 shrink-0 pt-4 border-t border-gray-100">
+          <button onclick="document.getElementById('modal-veh').classList.add('hidden')"
+                  class="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.parametres.veh.save()"
+                  class="flex-1 px-4 py-2 rounded-lg bg-sag-gold hover:bg-sag-goldlt text-white font-semibold text-sm transition-colors">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MODAL UV ══════════════════════════════════════ -->
+    <div id="modal-uv" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-6">
+        <h3 id="modal-uv-title" class="font-bold text-gray-800 text-base mb-5">Nouvelle UV</h3>
+        <input type="hidden" id="uv-id"/>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Code *</label>
+            <input type="text" id="uv-code" placeholder="ex: SAP"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold uppercase"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Libellé *</label>
+            <input type="text" id="uv-libelle" placeholder="ex: Secours à Personnes"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-6">
+          <button onclick="document.getElementById('modal-uv').classList.add('hidden')"
+                  class="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.parametres.uv.save()"
+                  class="flex-1 px-4 py-2 rounded-lg bg-sag-gold hover:bg-sag-goldlt text-white font-semibold text-sm transition-colors">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MODAL ÉQUIPE ══════════════════════════════════ -->
+    <div id="modal-eq" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-6">
+        <h3 id="modal-eq-title" class="font-bold text-gray-800 text-base mb-5">Nouvelle équipe</h3>
+        <input type="hidden" id="eq-id"/>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Code *</label>
+            <input type="text" id="eq-code" placeholder="ex: A"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold uppercase"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Nom *</label>
+            <input type="text" id="eq-nom" placeholder="ex: Groupe Alpha"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-600 mb-1">Couleur</label>
+            <div class="flex items-center gap-3">
+              <input type="color" id="eq-couleur" value="#1A3A6B"
+                     class="w-10 h-10 rounded-lg border border-gray-200 cursor-pointer p-0.5"/>
+              <span class="text-xs text-gray-400">Couleur du badge de l'équipe</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-6">
+          <button onclick="document.getElementById('modal-eq').classList.add('hidden')"
+                  class="flex-1 px-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.parametres.eq.save()"
+                  class="flex-1 px-4 py-2 rounded-lg bg-sag-gold hover:bg-sag-goldlt text-white font-semibold text-sm transition-colors">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- ── Interventions ───────────────────────────────────── -->
+  <template id="tpl-interventions">
+    <div class="flex flex-col h-full overflow-hidden" style="background:#f8fafc;">
+
+      <!-- Barre navigation garde -->
+      <div class="shrink-0 bg-white border-b border-gray-200 px-6 py-3 flex items-center gap-3">
+        <!-- Flèche gauche -->
+        <button id="itv-prev-btn"
+                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors text-gray-500 disabled:opacity-30 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Date affichée + input caché -->
+        <div class="flex-1 flex justify-center">
+          <label for="itv-garde-date" class="cursor-pointer group flex items-center gap-2 px-4 py-1.5 rounded-lg hover:bg-gray-50 transition-colors">
+            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span id="itv-date-label" class="text-sm font-semibold text-gray-700 capitalize"></span>
+            <svg class="w-3.5 h-3.5 text-gray-300 group-hover:text-gray-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </label>
+          <input type="date" id="itv-garde-date" class="sr-only"/>
+        </div>
+
+        <!-- Flèche droite -->
+        <button id="itv-next-btn"
+                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors text-gray-500 disabled:opacity-30 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <div class="w-px h-6 bg-gray-200 mx-1"></div>
+
+        <!-- Toggle vue -->
+        <div class="flex rounded-lg border border-gray-200 overflow-hidden shrink-0">
+          <button id="itv-view-list"
+                  class="w-8 h-8 flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+            </svg>
+          </button>
+          <button id="itv-view-grid"
+                  class="w-8 h-8 flex items-center justify-center border-l border-gray-200 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18M10 3v18M14 3v18M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="w-px h-6 bg-gray-200 mx-1"></div>
+
+        <!-- Bouton nouvelle intervention -->
+        <button id="itv-new-btn"
+                class="flex items-center gap-1.5 text-sm bg-sag-navy text-white px-4 py-2 rounded-lg hover:bg-sag-navylt transition-colors font-medium shrink-0">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+          Nouvelle
+        </button>
+      </div>
+
+      <!-- Compteur résumé -->
+      <div id="itv-summary" class="shrink-0 px-6 py-2 flex items-center gap-3"></div>
+
+      <!-- Contenu (liste ou grille) -->
+      <div class="flex-1 min-h-0 flex flex-col">
+        <div id="itv-list" class="flex-1 overflow-auto space-y-3 max-w-4xl mx-auto w-full px-6 pb-6"></div>
+        <div id="itv-grid" class="hidden flex-1 overflow-auto"></div>
+      </div>
+
+    </div>
+  </template>
+
+  <!-- Modal intervention (globale) -->
+  <div id="modal-itv" class="hidden fixed inset-0 z-50 flex items-start justify-center bg-black/50 overflow-y-auto py-8 px-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl">
+      <!-- En-tête modal -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 id="modal-itv-title" class="font-bold text-gray-800 text-base">Nouvelle intervention</h3>
+        <button onclick="App.pages.interventions._closeModal()"
+                class="text-gray-300 hover:text-gray-500 transition-colors text-lg leading-none">✕</button>
+      </div>
+
+      <!-- Corps modal -->
+      <div class="px-6 py-5 space-y-5">
+
+        <!-- Numéro + Heure -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Numéro</label>
+            <div class="flex items-center gap-2">
+              <span id="modal-itv-prefix" class="text-sm font-mono font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 select-none whitespace-nowrap"></span>
+              <div class="flex gap-1" id="modal-itv-otp"></div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Heure</label>
+            <input type="time" id="modal-itv-heure"
+                   class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+        </div>
+
+        <!-- Type d'intervention -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Type d'intervention</label>
+          <div id="modal-itv-types" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Véhicules -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-semibold text-gray-700">Véhicules engagés</h4>
+            <button id="modal-itv-add-veh-btn"
+                    class="flex items-center gap-1 text-xs bg-sag-navy text-white px-2.5 py-1.5 rounded-lg hover:bg-sag-navylt transition-colors font-medium">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+              </svg>
+              Ajouter un véhicule
+            </button>
+          </div>
+
+          <!-- Picker véhicule -->
+          <div id="modal-itv-picker" class="hidden mb-4 bg-white border border-blue-200 rounded-xl p-4"></div>
+
+          <!-- Blocs véhicules -->
+          <div id="modal-itv-vehicules" class="space-y-3"></div>
+        </div>
+
+      </div>
+
+      <!-- Footer modal -->
+      <div class="flex items-center justify-between px-6 py-4 border-t border-gray-100">
+        <button id="modal-itv-delete-btn"
+                class="hidden text-xs text-red-500 hover:text-red-700 flex items-center gap-1 transition-colors font-medium">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+          Supprimer
+        </button>
+        <div class="flex gap-2 ml-auto">
+          <button onclick="App.pages.interventions._closeModal()"
+                  class="text-sm text-gray-500 hover:text-gray-700 px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors">
+            Annuler
+          </button>
+          <button onclick="App.pages.interventions._saveModal()"
+                  class="text-sm bg-sag-gold text-sag-navy font-semibold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="tpl-debug">
+    <div id="debug-container" class="flex-1 min-h-0 overflow-auto p-6"></div>
+  </template>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════════════════ -->
+  <script>
+  // ─── API ────────────────────────────────────────────────
+  const API = {
+    async get(file) {
+      const r = await fetch(`/api/data/${file}`);
+      if (!r.ok) throw new Error(`Erreur lecture ${file}`);
+      return r.json();
+    },
+    async save(file, data) {
+      const r = await fetch(`/api/data/${file}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!r.ok) throw new Error(`Erreur écriture ${file}`);
+      return r.json();
+    },
+    async files() {
+      const r = await fetch('/api/files');
+      return (await r.json()).files;
+    }
+  };
+
+  // ─── Toast ───────────────────────────────────────────────
+  const Toast = {
+    _t: null,
+    show(msg, type = 'ok') {
+      const el = document.getElementById('toast');
+      const ico = document.getElementById('toast-icon');
+      const txt = document.getElementById('toast-msg');
+      ico.textContent = type === 'ok' ? '✓' : '⚠';
+      ico.className = `text-lg ${type === 'ok' ? 'text-green-500' : 'text-red-500'}`;
+      txt.textContent = msg;
+      el.classList.remove('hidden');
+      clearTimeout(this._t);
+      this._t = setTimeout(() => el.classList.add('hidden'), 3000);
+    }
+  };
+
+  // ─── Utilitaires ─────────────────────────────────────────
+  const MOIS = ['Janvier','Février','Mars','Avril','Mai','Juin',
+                'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  const JOURS = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+
+  const GRADE_IMG = {
+    'Sapeur 2ème classe':  'SA2',
+    'Sapeur 1ère classe':  'SA1',
+    'Caporal':             'CPL',
+    'Caporal-chef':        'CCH',
+    'Sergent':             'SGT',
+    'Sergent-chef':        'SCH',
+    'Adjudant':            'ADJ',
+    'Adjudant-chef':       'ADC',
+    'Lieutenant':          'LTN',
+    'Capitaine':           'CNE',
+    'Commandant':          'CDT',
+    'Lieutenant-colonel':  'LCL',
+    'Colonel':             'COL',
+  };
+
+  function gradeImg(grade, size = 28) {
+    const key = GRADE_IMG[grade];
+    if (!key) return '';
+    return `<img src="assets/grades/${key}.webp" alt="${grade}"
+                 title="${grade}"
+                 style="width:${size}px;height:${size}px;object-fit:contain"
+                 onerror="this.style.display='none'"/>`;
+  }
+
+  const UV_CATS = [
+    { key: 'EQ',   label: 'EQ',   bg: '#dbeafe', color: '#1d4ed8' },
+    { key: 'CE',   label: 'CE',   bg: '#fef9c3', color: '#92400e' },
+    { key: 'CA',   label: 'CA',   bg: '#dcfce7', color: '#15803d' },
+    { key: 'COND', label: 'COND', bg: '#ede9fe', color: '#6d28d9' },
+    { key: 'COD',  label: 'COD',  bg: '#ffedd5', color: '#c2410c' },
+    { key: 'FDF',  label: 'FDF',  bg: '#fce7f3', color: '#9d174d' },
+  ];
+
+  function renderUV(uvList) {
+    if (!uvList || !uvList.length) return '<span class="text-gray-300 text-xs">—</span>';
+    const groups = {};
+    uvList.forEach(u => {
+      const cat = UV_CATS.find(c => u.startsWith(c.key));
+      const k = cat ? cat.key : 'AUTRE';
+      if (!groups[k]) groups[k] = [];
+      groups[k].push(u);
+    });
+    return Object.entries(groups).map(([k, items]) => {
+      const cat = UV_CATS.find(c => c.key === k) || { bg: '#f1f5f9', color: '#475569' };
+      const tooltip = items.join('<br>');
+      return `<span class="uv-cat">
+        <span class="uv-cat-badge" style="background:${cat.bg};color:${cat.color}">
+          ${k}<span style="opacity:0.6;font-weight:400"> ×${items.length}</span>
+        </span>
+        <span class="uv-tooltip">${items.join('<br>')}</span>
+      </span>`;
+    }).join('');
+  }
+
+  function badgeGroupe(g) {
+    return `<span class="badge-${g} px-2 py-0.5 rounded-full text-xs font-bold">${g}</span>`;
+  }
+
+  function formatDate(d) {
+    return new Date(d).toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric' });
+  }
+
+  function groupeToday(rotations) {
+    const today = new Date().toISOString().slice(0, 10);
+    const entries = (rotations.rotations || [])
+      .filter(r => r.date <= today)
+      .sort((a, b) => b.date.localeCompare(a.date));
+    return entries.length ? entries[0].groupe : null;
+  }
+
+  // ─── Constantes garde ────────────────────────────────────
+  const GARDE_TYPES = [
+    { val: 'G24', bg: '#0B1629', color: '#fff' },
+    { val: 'GJ',  bg: '#d97706', color: '#fff' },
+    { val: 'GN',  bg: '#6d28d9', color: '#fff' },
+    { val: 'GJ1', bg: '#059669', color: '#fff' },
+    { val: 'GJ2', bg: '#0891b2', color: '#fff' },
+  ];
+  const GARDE_ROLES = ['SOG', 'STAT', 'EAP', 'BNSSA'];
+
+  function gardeTypeMeta(val) {
+    return GARDE_TYPES.find(t => t.val === val) || { bg: '#64748b', color: '#fff' };
+  }
+
+  // ─── Calendrier miniature (dashboard) ────────────────────
+  function buildCalendrier(year, month, rotations) {
+    const firstDay = new Date(year, month, 1);
+    const lastDay  = new Date(year, month + 1, 0);
+    let startDow = (firstDay.getDay() + 6) % 7;
+
+    const byDate = {};
+    (rotations.rotations || []).forEach(r => { byDate[r.date] = r.groupe; });
+
+    let html = `<div class="p-4">`;
+    html += `<div class="grid grid-cols-7 mb-1">`;
+    JOURS.forEach(j => {
+      html += `<div class="text-center text-xs font-medium text-gray-400 py-1">${j}</div>`;
+    });
+    html += `</div><div class="grid grid-cols-7 gap-0.5">`;
+
+    for (let i = 0; i < startDow; i++) html += `<div></div>`;
+
+    const today = new Date().toISOString().slice(0, 10);
+
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const groupe  = byDate[dateStr];
+      const isToday = dateStr === today;
+      const bgColor = groupe
+        ? groupe === 'A' ? 'bg-blue-600 text-white'
+        : groupe === 'B' ? 'bg-red-600 text-white'
+        : groupe === 'C' ? 'bg-green-600 text-white'
+        : 'bg-purple-600 text-white'
+        : isToday ? 'bg-sag-gold text-white'
+        : 'hover:bg-gray-100 text-gray-700';
+
+      html += `<div class="flex flex-col items-center justify-center rounded-lg p-1 text-xs font-medium ${bgColor} ${isToday ? 'ring-2 ring-sag-gold ring-offset-1' : ''}">
+                <span>${d}</span>
+                ${groupe ? `<span class="text-[9px] opacity-80 leading-none">${groupe}</span>` : ''}
+              </div>`;
+    }
+    html += `</div></div>`;
+    return html;
+  }
+
+  // ─── Calendrier planning (page planning) ─────────────────
+  function buildCalendrierPlanning(year, month, gardes) {
+    const firstDay = new Date(year, month, 1);
+    const lastDay  = new Date(year, month + 1, 0);
+    let startDow   = (firstDay.getDay() + 6) % 7;
+    // Avant 07h30 → la garde active est celle de la veille
+    const now = new Date();
+    const activeDate = (now.getHours() < 7 || (now.getHours() === 7 && now.getMinutes() < 30))
+      ? new Date(now.getTime() - 86400000)
+      : now;
+    const today = activeDate.toISOString().slice(0, 10);
+
+    let html = `<div class="p-3">`;
+    html += `<div class="grid grid-cols-7 mb-1">`;
+    JOURS.forEach(j => {
+      html += `<div class="text-center text-xs font-medium text-gray-400 py-1">${j}</div>`;
+    });
+    html += `</div><div class="grid grid-cols-7 gap-1">`;
+
+    for (let i = 0; i < startDow; i++) html += `<div></div>`;
+
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const aff     = gardes[dateStr] || [];
+      const isToday = dateStr === today;
+
+      const hasMissions = aff.length > 0;
+
+      html += `<div onclick="App.pages.planning.openDay('${dateStr}')"
+                   data-datestr="${dateStr}"
+                   class="rounded-lg border cursor-pointer transition-all min-h-[64px] p-1.5 flex flex-col
+                          ${isToday ? 'border-2 border-red-500' : 'border border-transparent'}
+                          ${hasMissions ? 'bg-orange-400' : 'bg-gray-100 hover:bg-gray-200'}">
+                <span class="text-xs font-semibold ${hasMissions ? 'text-white' : 'text-gray-400'}">${d}</span>
+                ${hasMissions ? `<span class="text-[9px] text-white/80 mt-auto">${aff.length} ag.</span>` : ''}
+              </div>`;
+    }
+    html += `</div></div>`;
+    return html;
+  }
+
+  // ─── Pages ───────────────────────────────────────────────
+  const App = {
+    currentPage: null,
+    data: { personnel: [], rotations: {}, config: {}, vehicules: [], uv: [], equipes: [] },
+
+    // Chargement initial des données
+    async loadAll() {
+      try {
+        [this.data.personnel, this.data.rotations, this.data.config,
+         this.data.uv, this.data.equipes] = await Promise.all([
+          API.get('personnel.json'),
+          API.get('rotations.json'),
+          API.get('config.json'),
+          API.get('uv.json'),
+          API.get('equipes.json')
+        ]);
+      } catch(e) {
+        console.warn('Chargement partiel :', e.message);
+      }
+    },
+
+    navigate(page) {
+      // Met à jour la nav
+      document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active', 'text-white');
+        el.classList.add('text-gray-300');
+        el.querySelector('.nav-indicator').style.opacity = '0';
+      });
+      const link = document.querySelector(`.nav-item[data-page="${page}"]`);
+      if (link) {
+        link.classList.add('active', 'text-white');
+        link.classList.remove('text-gray-300');
+        link.querySelector('.nav-indicator').style.opacity = '1';
+      }
+
+      // Titre
+      const titles = {
+        dashboard: 'Tableau de bord',
+        planning: 'Planning',
+        personnel: 'Ressources humaines',
+        vehicules: 'Véhicules',
+        statistiques: 'Statistiques',
+        parametres: 'Paramètres',
+        interventions: 'Interventions',
+        debug: 'Debug'
+      };
+      document.getElementById('page-title').textContent = titles[page] || page;
+
+      // Clone template
+      const tpl = document.getElementById(`tpl-${page}`);
+      if (!tpl) return;
+      const content = document.getElementById('page-content');
+      content.innerHTML = '';
+      content.appendChild(tpl.content.cloneNode(true));
+
+      this.currentPage = page;
+      if (this.pages[page]?.init) this.pages[page].init();
+    },
+
+    pages: {
+
+      // ── Dashboard ──────────────────────────────────────
+      dashboard: {
+        async init() {
+          const { personnel, rotations, config } = App.data;
+
+          document.getElementById('db-date').textContent =
+            new Date().toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
+          document.getElementById('kpi-personnel').textContent = personnel.filter(p => p.actif).length;
+          document.getElementById('kpi-rotations').textContent = (rotations.rotations || []).length;
+          document.getElementById('kpi-centre').textContent = config.centre || 'SAG';
+
+          const grp = groupeToday(rotations);
+          document.getElementById('kpi-groupe').textContent = grp ? `Groupe ${grp}` : 'Non planifié';
+
+          // Mini calendrier
+          const now = new Date();
+          document.getElementById('mini-calendrier').innerHTML =
+            buildCalendrier(now.getFullYear(), now.getMonth(), rotations);
+
+          // Personnel en garde
+          const pgEl = document.getElementById('personnel-garde');
+          const gardePersons = grp ? personnel.filter(p => p.groupe === grp && p.actif) : [];
+          if (!gardePersons.length) {
+            pgEl.innerHTML = `<p class="text-gray-300 text-xs text-center py-4">Aucun personnel en garde défini</p>`;
+          } else {
+            pgEl.innerHTML = gardePersons.map(p => `
+              <div class="flex items-center gap-3 py-1.5 border-b border-gray-50 last:border-0">
+                <div class="w-7 h-7 rounded-full bg-sag-navy flex items-center justify-center text-sag-gold text-xs font-bold shrink-0">
+                  ${p.prenom[0]}${p.nom[0]}
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-medium text-gray-700 truncate">${p.grade} ${p.nom}</p>
+                  <p class="text-xs text-gray-400">${(p.specialites || []).join(', ')}</p>
+                </div>
+              </div>
+            `).join('');
+          }
+        }
+      },
+
+      // ── Planning ───────────────────────────────────────
+      planning: {
+        year:  new Date().getFullYear(),
+        month: new Date().getMonth(),
+        _currentDay: null,
+
+        _activeDate() {
+          const now = new Date();
+          const d = (now.getHours() < 7 || (now.getHours() === 7 && now.getMinutes() < 30))
+            ? new Date(now.getTime() - 86400000) : now;
+          return d.toISOString().slice(0, 10);
+        },
+
+        init() {
+          const active = this._activeDate();
+          const d = new Date(active + 'T12:00:00');
+          this.year  = d.getFullYear();
+          this.month = d.getMonth();
+          this.render();
+          this.openDay(active);
+          document.getElementById('prev-month').onclick = () => {
+            if (this.month === 0) { this.month = 11; this.year--; }
+            else this.month--;
+            this.render();
+          };
+          document.getElementById('next-month').onclick = () => {
+            if (this.month === 11) { this.month = 0; this.year++; }
+            else this.month++;
+            this.render();
+          };
+        },
+
+        _gardes() {
+          return App.data.rotations.gardes || {};
+        },
+
+        render() {
+          document.getElementById('mois-label').textContent =
+            `${MOIS[this.month]} ${this.year}`;
+          document.getElementById('calendrier-planning').innerHTML =
+            buildCalendrierPlanning(this.year, this.month, this._gardes());
+        },
+
+        openDay(dateStr) {
+          this._currentDay = dateStr;
+          const d = new Date(dateStr + 'T12:00:00');
+          const titre = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+          document.getElementById('panel-jour-titre').textContent = titre;
+
+          // Init pills type (single select)
+          document.querySelectorAll('.garde-type-pill').forEach(b => {
+            b.classList.remove('active');
+            b.onclick = () => {
+              const was = b.classList.contains('active');
+              document.querySelectorAll('.garde-type-pill').forEach(x => x.classList.remove('active'));
+              if (!was) b.classList.add('active');
+            };
+          });
+          // Init pills rôle (single select, toggleable)
+          document.querySelectorAll('.garde-role-pill').forEach(b => {
+            b.classList.remove('active');
+            b.onclick = () => {
+              const was = b.classList.contains('active');
+              document.querySelectorAll('.garde-role-pill').forEach(x => x.classList.remove('active'));
+              if (!was) b.classList.add('active');
+            };
+          });
+
+          this._populateAgentSelect();
+          document.getElementById('search-agent-planning').value = '';
+          document.getElementById('btn-open-add').classList.remove('hidden');
+          this.renderDayList();
+
+          // Highlight jour sélectionné dans le calendrier
+          document.querySelectorAll('[data-datestr]').forEach(el => {
+            el.classList.toggle('ring-2', el.dataset.datestr === dateStr);
+            el.classList.toggle('ring-sag-gold', el.dataset.datestr === dateStr);
+          });
+        },
+
+        _populateAgentSelect(filter = '') {
+          const sel = document.getElementById('select-agent-planning');
+          const q   = filter.toLowerCase();
+          const list = App.data.personnel
+            .filter(p => p.actif !== false)
+            .filter(p => !q || `${p.nom} ${p.prenom} ${p.grade}`.toLowerCase().includes(q))
+            .sort((a, b) => a.nom.localeCompare(b.nom));
+          sel.innerHTML = list.map(p =>
+            `<option value="${p.id}">${p.nom} ${p.prenom} — ${p.grade}</option>`
+          ).join('');
+        },
+
+        filterAgents() {
+          this._populateAgentSelect(document.getElementById('search-agent-planning').value);
+        },
+
+        renderDayList() {
+          const aff  = (this._gardes()[this._currentDay] || []);
+          const countEl = document.getElementById('panel-jour-count');
+          if (countEl) countEl.textContent = aff.length ? `${aff.length} agent${aff.length > 1 ? 's' : ''} affecté${aff.length > 1 ? 's' : ''}` : '';
+
+          // Récapitulatif par type
+          const recapEl = document.getElementById('recap-types');
+          const recapIn = document.getElementById('recap-types-inner');
+          if (recapEl && recapIn) {
+            if (aff.length) {
+              const counts = {};
+              aff.forEach(a => { counts[a.type] = (counts[a.type]||0)+1; });
+              recapIn.innerHTML = GARDE_TYPES
+                .filter(t => counts[t.val])
+                .map(t => `<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style="background:${t.bg}20;border:1px solid ${t.bg}40">
+                  <span class="w-2 h-2 rounded-full shrink-0" style="background:${t.bg}"></span>
+                  <span class="text-xs font-semibold" style="color:${t.bg}">${t.val}</span>
+                  <span class="text-xs font-bold text-gray-700">${counts[t.val]}</span>
+                </div>`)
+                .join('');
+              recapEl.classList.remove('hidden');
+            } else {
+              recapEl.classList.add('hidden');
+            }
+          }
+
+          const el = document.getElementById('jour-liste');
+          if (!aff.length) {
+            el.innerHTML = `<p class="text-gray-300 text-sm text-center py-8">Aucune affectation pour ce jour</p>`;
+            return;
+          }
+          el.innerHTML = aff.map((a, i) => {
+            const p    = App.data.personnel.find(x => String(x.id) === String(a.agentId));
+            const name = p ? `${p.nom} ${p.prenom}` : `Agent #${a.agentId}`;
+            const img  = p && GRADE_IMG[p.grade]
+              ? `<div class="w-8 h-8 rounded-full bg-sag-navy flex items-center justify-center shrink-0">
+                   <img src="assets/grades/${GRADE_IMG[p.grade]}.webp" style="width:22px;height:22px;object-fit:contain"/>
+                 </div>`
+              : `<div class="w-8 h-8 rounded-full bg-sag-navy flex items-center justify-center shrink-0 text-sag-gold text-xs font-bold">
+                   ${p ? (p.prenom[0]+p.nom[0]) : '?'}
+                 </div>`;
+            const tm = gardeTypeMeta(a.type);
+            const typeBadge = `<span class="px-2 py-0.5 rounded text-xs font-bold" style="background:${tm.bg};color:${tm.color}">${a.type}</span>`;
+            const roleBadge = a.role ? `<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-600">${a.role}</span>` : '';
+            return `<div class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
+              ${img}
+              <span class="text-sm font-medium text-gray-800 flex-1 min-w-0 truncate">${name}</span>
+              ${typeBadge}
+              ${roleBadge}
+              <button onclick="App.pages.planning.removeAffectation(${i})"
+                      class="text-gray-300 hover:text-red-400 transition-colors p-1 rounded shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>`;
+          }).join('');
+        },
+
+        openAddModal() {
+          const d = new Date(this._currentDay + 'T12:00:00');
+          document.getElementById('modal-add-titre').textContent =
+            d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' });
+          document.querySelectorAll('.garde-type-pill, .garde-role-pill').forEach(b => b.classList.remove('active'));
+          document.getElementById('search-agent-planning').value = '';
+          this._populateAgentSelect();
+          document.getElementById('modal-add-agent').classList.remove('hidden');
+        },
+
+        async addAffectation() {
+          const sel  = document.getElementById('select-agent-planning');
+          const agentId = sel.value;
+          if (!agentId) { Toast.show('Sélectionnez un agent', 'err'); return; }
+          const typeEl = document.querySelector('.garde-type-pill.active');
+          if (!typeEl) { Toast.show('Sélectionnez un type de garde', 'err'); return; }
+          const type = typeEl.dataset.value;
+          const roleEl = document.querySelector('.garde-role-pill.active');
+          const role = roleEl ? roleEl.dataset.value : null;
+
+          const rot = App.data.rotations;
+          if (!rot.gardes) rot.gardes = {};
+          if (!rot.gardes[this._currentDay]) rot.gardes[this._currentDay] = [];
+          rot.gardes[this._currentDay].push({ agentId, type, role });
+
+          await API.save('rotations.json', rot);
+          document.getElementById('modal-add-agent').classList.add('hidden');
+          this.renderDayList();
+          this.render();
+          Toast.show('Agent ajouté');
+        },
+
+        async removeAffectation(idx) {
+          const rot = App.data.rotations;
+          if (!rot.gardes?.[this._currentDay]) return;
+          rot.gardes[this._currentDay].splice(idx, 1);
+          if (!rot.gardes[this._currentDay].length) delete rot.gardes[this._currentDay];
+          await API.save('rotations.json', rot);
+          this.renderDayList();
+          this.render();
+          Toast.show('Affectation supprimée');
+        },
+      },
+
+      // ── Personnel / Ressources humaines ────────────────
+      personnel: {
+        _filtered: [],
+
+        _calcAge(ddn) {
+          if (!ddn) return null;
+          const today = new Date();
+          const birth = new Date(ddn);
+          let age = today.getFullYear() - birth.getFullYear();
+          const m = today.getMonth() - birth.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+          return age >= 0 ? age : null;
+        },
+
+        _calcFacteur(age) {
+          if (age === null || age < 0) return null;
+          if (age < 20)  return '0.90';
+          if (age < 30)  return '1.00';
+          if (age < 40)  return '1.05';
+          if (age <= 50) return '1.10';
+          if (age <= 60) return '1.15';
+          return '1.20';
+        },
+
+        updateGradePreview() {
+          const grade = document.getElementById('pers-grade').value;
+          const box   = document.getElementById('pers-grade-preview');
+          if (!box) return;
+          const key = GRADE_IMG[grade];
+          box.innerHTML = key
+            ? `<img src="assets/grades/${key}.webp" alt="${grade}" style="width:36px;height:36px;object-fit:contain" onerror="this.parentElement.innerHTML='<span class=text-gray-300 text-xs>—</span>'"/>`
+            : `<span class="text-gray-200 text-xs">—</span>`;
+        },
+
+        updateAgeDisplay() {
+          const ddn = document.getElementById('pers-ddn').value;
+          const age = this._calcAge(ddn);
+          const facteur = this._calcFacteur(age);
+          document.getElementById('pers-age-display').textContent = age !== null ? `${age} ans` : '—';
+          document.getElementById('pers-facteur-display').textContent = facteur !== null ? facteur : '—';
+        },
+
+        init() {
+          // Peupler le filtre groupe
+          const filterGr = document.getElementById('filter-groupe');
+          filterGr.innerHTML = '<option value="">Tous les groupes</option>' +
+            (App.data.equipes || []).map(e =>
+              `<option value="${e.code}">${e.nom}</option>`
+            ).join('');
+
+          // Peupler le select groupe du modal
+          const selGr = document.getElementById('pers-groupe');
+          if (selGr) {
+            selGr.innerHTML = (App.data.equipes || []).map(e =>
+              `<option value="${e.code}">${e.nom}</option>`
+            ).join('');
+          }
+
+          // Peupler les UV du modal
+          const uvGroup = document.getElementById('pers-uv-group');
+          if (uvGroup) {
+            uvGroup.innerHTML = (App.data.uv || []).map(u =>
+              `<button type="button" class="pers-uv-pill pill-tag" data-value="${u.code}" title="${u.libelle}">${u.code}</button>`
+            ).join('');
+            uvGroup.querySelectorAll('.pers-uv-pill').forEach(btn =>
+              btn.addEventListener('click', () => btn.classList.toggle('active'))
+            );
+          }
+
+          // Sélection unique pour les fonctions
+          document.querySelectorAll('.pers-fonction-pill').forEach(btn =>
+            btn.addEventListener('click', () => {
+              const wasActive = btn.classList.contains('active');
+              document.querySelectorAll('.pers-fonction-pill').forEach(b => b.classList.remove('active'));
+              if (!wasActive) btn.classList.add('active');
+            })
+          );
+
+          this._filtered = [...App.data.personnel];
+          this.renderTable(this._filtered);
+          document.getElementById('count-personnel').textContent =
+            `${App.data.personnel.length} enregistré(s)`;
+        },
+
+        filter() {
+          const q  = document.getElementById('search-personnel').value.toLowerCase();
+          const gr = document.getElementById('filter-groupe').value;
+          const st = document.getElementById('filter-statut').value;
+          this._filtered = App.data.personnel.filter(p => {
+            const matchQ  = !q || `${p.nom} ${p.prenom} ${p.grade}`.toLowerCase().includes(q);
+            const matchGr = !gr || p.groupe === gr;
+            const matchSt = !st || p.statut === st;
+            return matchQ && matchGr && matchSt;
+          });
+          this.renderTable(this._filtered);
+          document.getElementById('count-personnel').textContent =
+            `${this._filtered.length} / ${App.data.personnel.length}`;
+        },
+
+        renderTable(list) {
+          const tbody = document.getElementById('table-personnel');
+          if (!list.length) {
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center py-8 text-gray-300">Aucun résultat</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = list.map(p => {
+            const age     = this._calcAge(p.ddn);
+            const facteur = this._calcFacteur(age);
+            const fonctions = p.fonctions
+              ? `<span class="px-1.5 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700">${p.fonctions}</span>`
+              : '';
+            const statutColor = p.statut === 'SPP' ? 'bg-orange-100 text-orange-700' : 'bg-sky-100 text-sky-700';
+            return `
+            <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+              <td class="px-4 py-3 font-medium text-gray-800">
+                <div class="flex items-center gap-2">
+                  <div class="w-9 h-9 rounded-full bg-sag-navy flex items-center justify-center shrink-0 overflow-hidden">
+                    ${GRADE_IMG[p.grade]
+                      ? `<img src="assets/grades/${GRADE_IMG[p.grade]}.webp" alt="${p.grade}" title="${p.grade}" style="width:28px;height:28px;object-fit:contain"/>`
+                      : `<span class="text-sag-gold text-xs font-bold">${(p.prenom||'?')[0]}${(p.nom||'?')[0]}</span>`
+                    }
+                  </div>
+                  ${p.nom} ${p.prenom}
+                </div>
+              </td>
+              <td class="px-4 py-3">${badgeGroupe(p.groupe)}</td>
+              <td class="px-4 py-3">
+                ${p.statut ? `<span class="px-2 py-0.5 rounded-full text-xs font-semibold ${statutColor}">${p.statut}</span>` : '<span class="text-gray-300 text-xs">—</span>'}
+              </td>
+              <td class="px-4 py-3 hidden md:table-cell">${fonctions || '<span class="text-gray-300 text-xs">—</span>'}</td>
+              <td class="px-4 py-3 hidden lg:table-cell">
+                <div class="flex flex-wrap gap-1">${renderUV(p.uv)}</div>
+              </td>
+              <td class="px-4 py-3 text-gray-600 hidden md:table-cell">${age !== null ? `${age} ans` : '<span class="text-gray-300">—</span>'}</td>
+              <td class="px-4 py-3 font-medium hidden md:table-cell ${facteur ? 'text-gray-700' : 'text-gray-300'}">${facteur || '—'}</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center gap-1 justify-end">
+                  <button onclick="App.pages.personnel.openEdit('${p.id}')"
+                          class="p-1.5 text-gray-300 hover:text-sag-gold rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                    </svg>
+                  </button>
+                  <button onclick="App.pages.personnel.delete('${p.id}')"
+                          class="p-1.5 text-gray-300 hover:text-red-400 rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>`;
+          }).join('');
+        },
+
+        _resetModal() {
+          document.getElementById('pers-id').value = '';
+          document.getElementById('pers-nom').value = '';
+          document.getElementById('pers-prenom').value = '';
+          document.getElementById('pers-grade').value = '';
+          this.updateGradePreview();
+          document.getElementById('pers-groupe').value = '';
+          document.getElementById('pers-ddn').value = '';
+          document.getElementById('pers-statut').value = '';
+          document.getElementById('pers-actif').checked = true;
+          document.querySelectorAll('.pers-fonction-pill').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.pers-uv-pill').forEach(b => b.classList.remove('active'));
+          document.getElementById('pers-age-display').textContent = '—';
+          document.getElementById('pers-facteur-display').textContent = '—';
+        },
+
+        openAdd() {
+          document.getElementById('modal-pers-title').textContent = 'Nouvel agent';
+          this._resetModal();
+          document.getElementById('modal-personnel').classList.remove('hidden');
+        },
+
+        openEdit(id) {
+          const p = App.data.personnel.find(x => String(x.id) === String(id));
+          if (!p) return;
+          document.getElementById('modal-pers-title').textContent = 'Modifier agent';
+          this._resetModal();
+          document.getElementById('pers-id').value = id;
+          document.getElementById('pers-nom').value = p.nom;
+          document.getElementById('pers-prenom').value = p.prenom;
+          document.getElementById('pers-grade').value = p.grade;
+          this.updateGradePreview();
+          document.getElementById('pers-groupe').value = p.groupe;
+          document.getElementById('pers-ddn').value = p.ddn || '';
+          document.getElementById('pers-statut').value = p.statut || 'SPV';
+          document.getElementById('pers-actif').checked = p.actif;
+          if (p.fonctions) {
+            const btn = document.querySelector(`.pers-fonction-pill[data-value="${p.fonctions}"]`);
+            if (btn) btn.classList.add('active');
+          }
+          (p.uv || []).forEach(u => {
+            const btn = document.querySelector(`.pers-uv-pill[data-value="${u}"]`);
+            if (btn) btn.classList.add('active');
+          });
+          this.updateAgeDisplay();
+          document.getElementById('modal-personnel').classList.remove('hidden');
+        },
+
+        async save() {
+          const id     = document.getElementById('pers-id').value;
+          const nom    = document.getElementById('pers-nom').value.trim().toUpperCase();
+          const prenom = document.getElementById('pers-prenom').value.trim();
+          if (!nom || !prenom) { Toast.show('Nom et prénom requis', 'err'); return; }
+
+          const fonctionEl = document.querySelector('.pers-fonction-pill.active');
+          const fonctions  = fonctionEl ? fonctionEl.dataset.value : null;
+          const uv        = [...document.querySelectorAll('.pers-uv-pill.active')].map(b => b.dataset.value);
+
+          const entry = {
+            id: id ? id : String(Date.now()),
+            nom, prenom,
+            grade:    document.getElementById('pers-grade').value,
+            groupe:   document.getElementById('pers-groupe').value,
+            statut:   document.getElementById('pers-statut').value,
+            ddn:      document.getElementById('pers-ddn').value || null,
+            fonctions,
+            uv,
+            actif:    document.getElementById('pers-actif').checked
+          };
+
+          if (id) {
+            const idx = App.data.personnel.findIndex(p => String(p.id) === String(id));
+            if (idx >= 0) App.data.personnel[idx] = entry;
+          } else {
+            App.data.personnel.push(entry);
+          }
+
+          await API.save('personnel.json', App.data.personnel);
+          document.getElementById('modal-personnel').classList.add('hidden');
+          this.init();
+          Toast.show('Agent enregistré');
+        },
+
+        async delete(id) {
+          if (!confirm('Supprimer cet agent ?')) return;
+          App.data.personnel = App.data.personnel.filter(p => String(p.id) !== String(id));
+          await API.save('personnel.json', App.data.personnel);
+          this.init();
+          Toast.show('Agent supprimé');
+        }
+      },
+
+      // ── Statistiques ───────────────────────────────────
+      statistiques: {
+        init() {
+          const { personnel } = App.data;
+
+          // Par groupe
+          const byGroupe = {};
+          personnel.forEach(p => { byGroupe[p.groupe] = (byGroupe[p.groupe]||0)+1; });
+          const totalG = personnel.length || 1;
+          document.getElementById('stat-groupes').innerHTML = Object.entries(byGroupe)
+            .sort((a,b) => a[0].localeCompare(b[0]))
+            .map(([g, n]) => `
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  ${badgeGroupe(g)}
+                  <span class="text-gray-500 font-medium">${n} SP</span>
+                </div>
+                <div class="w-full bg-gray-100 rounded-full h-1.5">
+                  <div class="h-1.5 rounded-full
+                    ${g==='A'?'bg-blue-600':g==='B'?'bg-red-600':g==='C'?'bg-green-600':'bg-purple-600'}"
+                    style="width:${Math.round(n/totalG*100)}%"></div>
+                </div>
+              </div>
+            `).join('');
+
+          // Par grade
+          const byGrade = {};
+          personnel.forEach(p => { byGrade[p.grade] = (byGrade[p.grade]||0)+1; });
+          document.getElementById('stat-grades').innerHTML = Object.entries(byGrade)
+            .sort((a,b) => b[1]-a[1])
+            .map(([g, n]) => `
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-600">${g}</span>
+                <span class="font-semibold text-gray-800">${n}</span>
+              </div>
+            `).join('');
+        }
+      },
+
+      // ── Interventions ──────────────────────────────────
+      interventions: {
+
+        _data: { interventions: [], personnel: [], vehicules: [], rotations: {} },
+        _currentDate: null,
+        _editingItv: null,
+        _viewMode: 'list',
+
+        TYPES: [
+          { id: 'SUAP', label: 'SUAP',   color: 'bg-rose-500',   text: 'text-white', ring: 'ring-rose-400',   dot: 'bg-rose-500',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>' },
+          { id: 'INC',  label: 'INC',    color: 'bg-orange-500', text: 'text-white', ring: 'ring-orange-400', dot: 'bg-orange-500',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>' },
+          { id: 'OD',   label: 'OD',     color: 'bg-blue-500',   text: 'text-white', ring: 'ring-blue-400',   dot: 'bg-blue-500',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 2c0 0-6 7.5-6 11a6 6 0 0012 0c0-3.5-6-11-6-11z"/>' },
+          { id: 'SR',   label: 'SR',     color: 'bg-emerald-500',text: 'text-white', ring: 'ring-emerald-400',dot: 'bg-emerald-500',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>' },
+          { id: 'SPÉ',  label: 'SPÉ',   color: 'bg-purple-500', text: 'text-white', ring: 'ring-purple-400', dot: 'bg-purple-500',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>' },
+          { id: 'AUTRES', label: 'AUTRES', color: 'bg-gray-400', text: 'text-white', ring: 'ring-gray-300',  dot: 'bg-gray-400',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>' },
+        ],
+
+        _typeById(id) { return this.TYPES.find(t => t.id === id) || this.TYPES[this.TYPES.length - 1]; },
+
+        async init() {
+          [this._data.interventions, this._data.personnel, this._data.vehicules, this._data.rotations] = await Promise.all([
+            API.get('interventions.json'),
+            API.get('personnel.json'),
+            API.get('vehicules.json'),
+            API.get('rotations.json'),
+          ]);
+
+          this._gardesList = Object.keys(this._data.rotations.gardes || {}).sort();
+
+          const today = new Date().toISOString().slice(0, 10);
+          const defaultDate = this._gardesList.includes(today)
+            ? today
+            : (this._gardesList[this._gardesList.length - 1] || today);
+
+          this._currentDate = defaultDate;
+          document.getElementById('itv-garde-date').value = defaultDate;
+          this._updateNav();
+          this._renderCurrent();
+
+          document.getElementById('itv-garde-date').addEventListener('change', e => {
+            this._currentDate = e.target.value;
+            this._updateNav();
+            this._renderCurrent();
+          });
+
+          document.getElementById('itv-prev-btn').addEventListener('click', () => this._stepGarde(-1));
+          document.getElementById('itv-next-btn').addEventListener('click', () => this._stepGarde(+1));
+          document.getElementById('itv-new-btn').addEventListener('click', () => this._openModal(null));
+
+          document.getElementById('itv-view-list').addEventListener('click', () => this._setView('list'));
+          document.getElementById('itv-view-grid').addEventListener('click', () => this._setView('grid'));
+          this._applyViewMode();
+        },
+
+        _setView(mode) {
+          this._viewMode = mode;
+          this._applyViewMode();
+          if (mode === 'grid') this._renderGrid();
+          else this._renderList();
+        },
+
+        _applyViewMode() {
+          const btnList = document.getElementById('itv-view-list');
+          const btnGrid = document.getElementById('itv-view-grid');
+          const divList = document.getElementById('itv-list');
+          const divGrid = document.getElementById('itv-grid');
+          if (!btnList) return;
+          const isGrid = this._viewMode === 'grid';
+          btnList.className = `w-8 h-8 flex items-center justify-center transition-colors ${isGrid ? 'text-gray-400 hover:text-gray-600' : 'bg-sag-navy text-white'}`;
+          btnGrid.className = `w-8 h-8 flex items-center justify-center border-l border-gray-200 transition-colors ${isGrid ? 'bg-sag-navy text-white' : 'text-gray-400 hover:text-gray-600'}`;
+          divList.classList.toggle('hidden', isGrid);
+          divGrid.classList.toggle('hidden', !isGrid);
+        },
+
+        _stepGarde(dir) {
+          const list = this._gardesList;
+          const idx  = list.indexOf(this._currentDate);
+          const next = list[idx + dir];
+          if (!next) return;
+          this._currentDate = next;
+          document.getElementById('itv-garde-date').value = next;
+          this._updateNav();
+          this._renderCurrent();
+        },
+
+        _renderCurrent() {
+          if (this._viewMode === 'grid') this._renderGrid();
+          else this._renderList();
+        },
+
+        _updateNav() {
+          const list  = this._gardesList;
+          const idx   = list.indexOf(this._currentDate);
+          const label = document.getElementById('itv-date-label');
+          const prev  = document.getElementById('itv-prev-btn');
+          const next  = document.getElementById('itv-next-btn');
+          if (!label) return;
+
+          // Label lisible
+          if (this._currentDate) {
+            const d = new Date(this._currentDate + 'T00:00:00');
+            label.textContent = d.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+          }
+
+          // Boutons actifs/désactivés
+          if (prev) prev.disabled = idx <= 0;
+          if (next) next.disabled = idx < 0 || idx >= list.length - 1;
+        },
+
+        _renderSummary(items) {
+          const summary = document.getElementById('itv-summary');
+          if (!summary) return;
+          if (items.length) {
+            const totalAgents = items.reduce((s, i) =>
+              s + (i.vehicules || []).reduce((ss, v) => ss + (v.equipage || []).filter(e => e.agentId).length, 0), 0);
+            const byType = {};
+            items.forEach(i => { if (i.type) byType[i.type] = (byType[i.type] || 0) + 1; });
+            summary.innerHTML = `
+              <span class="text-xs text-gray-400">${items.length} intervention${items.length > 1 ? 's' : ''}</span>
+              <span class="text-gray-200">·</span>
+              <span class="text-xs text-gray-400">${totalAgents} agent${totalAgents > 1 ? 's' : ''}</span>
+              ${Object.entries(byType).map(([tid, n]) => {
+                const t = this._typeById(tid);
+                return `<span class="text-xs font-semibold px-2 py-0.5 rounded-full ${t.color} ${t.text}">${n} ${t.label}</span>`;
+              }).join('')}`;
+          } else {
+            summary.innerHTML = '';
+          }
+        },
+
+        _renderList() {
+          const list = document.getElementById('itv-list');
+          if (!list) return;
+
+          const items = (this._data.interventions || [])
+            .filter(i => i.gardeDate === this._currentDate)
+            .sort((a, b) => (a.heure || '').localeCompare(b.heure || ''));
+
+          this._renderSummary(items);
+
+          if (!items.length) {
+            list.innerHTML = `
+              <div class="flex flex-col items-center justify-center py-24 text-gray-400">
+                <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
+                  <svg class="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                  </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-500">Aucune intervention</p>
+                <p class="text-xs text-gray-400 mt-1">Cliquez sur "Nouvelle" pour en créer une</p>
+              </div>`;
+            return;
+          }
+
+          list.innerHTML = items.map(i => {
+            const t      = i.type ? this._typeById(i.type) : null;
+            const vehs   = i.vehicules || [];
+            const aCount = vehs.reduce((s, v) => s + (v.equipage || []).filter(e => e.agentId).length, 0);
+
+            const vehBlocks = vehs.map(v => {
+              const agents = (v.equipage || []).filter(e => e.agentId).map(e => {
+                const p = this._data.personnel.find(p => p.id === e.agentId);
+                return p ? `<span class="inline-flex items-center gap-1 text-xs bg-white border border-gray-200 text-gray-700 px-2 py-0.5 rounded-full">
+                  <span class="font-semibold text-gray-400 text-[10px] uppercase">${this._esc(e.poste)}</span>
+                  ${this._esc(p.nom)} ${this._esc(p.prenom[0])}.
+                </span>` : null;
+              }).filter(Boolean);
+              return `<div class="flex items-start gap-2 flex-wrap">
+                <span class="inline-flex items-center text-xs font-bold bg-sag-navy text-white px-2.5 py-1 rounded-lg shrink-0">${this._esc(v.nom || '?')}</span>
+                ${agents.length ? agents.join('') : '<span class="text-xs text-gray-300 italic self-center">Aucun agent</span>'}
+              </div>`;
+            }).join('');
+
+            return `
+              <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all cursor-pointer overflow-hidden"
+                   onclick="App.pages.interventions._openModal('${i.id}')">
+                <!-- En-tête coloré -->
+                <div class="flex items-center gap-4 px-5 py-4 ${t ? t.color : 'bg-sag-navy'}">
+                  <svg class="w-6 h-6 text-white/90 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    ${t ? t.icon : '<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>'}
+                  </svg>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-white font-bold text-base font-mono leading-tight">${this._esc(i.numero || '—')}</p>
+                    <p class="text-white/60 text-xs mt-0.5">${t ? t.label : 'Type non défini'} · ${aCount} agent${aCount > 1 ? 's' : ''} en intervention</p>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <p class="text-white font-bold text-lg font-mono">${this._esc(i.heure || '--:--')}</p>
+                  </div>
+                </div>
+                <!-- Corps véhicules -->
+                ${vehs.length ? `
+                <div class="px-5 py-3 space-y-2 bg-white">
+                  ${vehBlocks}
+                </div>` : `<div class="px-5 py-3 text-xs text-gray-300 italic">Aucun véhicule</div>`}
+              </div>`;
+          }).join('');
+        },
+
+        _renderGrid() {
+          const container = document.getElementById('itv-grid');
+          if (!container) return;
+
+          const items = (this._data.interventions || [])
+            .filter(i => i.gardeDate === this._currentDate)
+            .sort((a, b) => (a.heure || '').localeCompare(b.heure || ''));
+
+          this._renderSummary(items);
+
+          // Agents on garde for this date
+          const gardeEntries = (this._data.rotations.gardes || {})[this._currentDate] || [];
+          const agents = gardeEntries
+            .map(e => this._data.personnel.find(p => p.id === e.agentId))
+            .filter(Boolean);
+
+          // Build lookup: agentId -> [{slotIndex, label}]
+          // Slot 0 = 07:30-08:00, slot 1 = 08:00-08:30, ..., slot 47 = 07:00-07:30
+          function heureToMinutes(h) {
+            const [hh, mm] = (h || '00:00').split(':').map(Number);
+            return hh * 60 + mm;
+          }
+          function slotIndex(heure) {
+            const m = heureToMinutes(heure);
+            // Minutes from 07:30
+            const base = 7 * 60 + 30;
+            let delta = m - base;
+            if (delta < 0) delta += 24 * 60;
+            return Math.floor(delta / 30);
+          }
+          function slotLabel(idx) {
+            const base = 7 * 60 + 30 + idx * 30;
+            const hh = Math.floor((base % (24 * 60)) / 60).toString().padStart(2, '0');
+            const mm = (base % 60).toString().padStart(2, '0');
+            const end = base + 30;
+            const ehh = Math.floor((end % (24 * 60)) / 60).toString().padStart(2, '0');
+            const emm = (end % 60).toString().padStart(2, '0');
+            return `${hh}:${mm}`;
+          }
+
+          // cellData[agentId][slotIndex] = array of strings
+          const cellData = {};
+          agents.forEach(a => { cellData[a.id] = {}; });
+
+          items.forEach(itv => {
+            if (!itv.heure) return;
+            const si = slotIndex(itv.heure);
+            (itv.vehicules || []).forEach(v => {
+              (v.equipage || []).forEach(e => {
+                if (!e.agentId || !cellData[e.agentId]) return;
+                if (!cellData[e.agentId][si]) cellData[e.agentId][si] = [];
+                cellData[e.agentId][si].push(`${v.nom || '?'} · ${e.poste}`);
+              });
+            });
+          });
+
+          const SLOTS = 48;
+
+          if (!agents.length) {
+            container.innerHTML = `<div class="flex items-center justify-center h-full text-gray-400 text-sm">Aucun agent en garde ce jour</div>`;
+            return;
+          }
+
+          // Build table HTML
+          // Sticky top-left cell + sticky header row + sticky left column
+          const thStyle = 'min-w-[90px] max-w-[110px] text-center text-[10px] font-semibold text-gray-500 uppercase bg-white border-b border-r border-gray-100 px-1 py-2 sticky top-0 z-20';
+          const th0Style = 'w-[64px] min-w-[64px] text-[10px] font-semibold text-gray-400 uppercase bg-white border-b border-r border-gray-200 px-2 py-2 sticky top-0 left-0 z-30';
+
+          const headerCells = agents.map(a => {
+            const name = `${a.nom || ''} ${(a.prenom || '')[0] || ''}.`;
+            const role = (gardeEntries.find(e => e.agentId === a.id) || {}).role || '';
+            return `<th class="${thStyle}">${this._esc(name)}<br><span class="text-gray-300 font-normal normal-case">${this._esc(role)}</span></th>`;
+          }).join('');
+
+          const rows = [];
+          for (let si = 0; si < SLOTS; si++) {
+            const label = slotLabel(si);
+            const isHour = (7 * 60 + 30 + si * 30) % 60 === 0;
+            const rowBg = si % 2 === 0 ? 'bg-white' : 'bg-gray-50/50';
+            const tdTimeStyle = `w-[64px] min-w-[64px] text-[11px] font-mono text-gray-400 border-r border-b border-gray-100 px-2 py-1 sticky left-0 z-10 ${rowBg} ${isHour ? 'font-semibold text-gray-500' : ''}`;
+
+            const dataCells = agents.map(a => {
+              const entries = (cellData[a.id][si] || []);
+              const cellContent = entries.map(txt => {
+                const parts = txt.split(' · ');
+                return `<span class="block text-[10px] leading-tight bg-sag-navy text-white rounded px-1 py-0.5 mb-0.5 font-semibold">${this._esc(txt)}</span>`;
+              }).join('');
+              return `<td class="text-center border-r border-b border-gray-100 px-1 py-1 ${rowBg} min-w-[90px] max-w-[110px]">${cellContent}</td>`;
+            }).join('');
+
+            rows.push(`<tr>
+              <td class="${tdTimeStyle}">${label}</td>
+              ${dataCells}
+            </tr>`);
+          }
+
+          container.innerHTML = `
+            <table class="border-collapse text-xs" style="table-layout:fixed">
+              <thead>
+                <tr>
+                  <th class="${th0Style}">Heure</th>
+                  ${headerCells}
+                </tr>
+              </thead>
+              <tbody>
+                ${rows.join('')}
+              </tbody>
+            </table>`;
+        },
+
+        _openModal(id) {
+          let itv;
+          if (id) {
+            // Modifier : deep-clone pour ne pas muter avant save
+            itv = JSON.parse(JSON.stringify(this._data.interventions.find(i => i.id === id)));
+          } else {
+            // Créer
+            if (!this._currentDate) { Toast.show('Sélectionnez d\'abord une date de garde', 'error'); return; }
+            itv = {
+              id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+              gardeDate: this._currentDate,
+              numero: this._nextNumeroFor(this._currentDate),
+              heure: '',
+              vehicules: [],
+            };
+          }
+          this._editingItv = itv;
+
+          document.getElementById('modal-itv-title').textContent = id ? 'Modifier l\'intervention' : 'Nouvelle intervention';
+
+          // Bouton supprimer visible seulement en édition
+          const delBtn = document.getElementById('modal-itv-delete-btn');
+          if (id) {
+            delBtn.classList.remove('hidden');
+            delBtn.onclick = () => this._deleteFromModal(id);
+          } else {
+            delBtn.classList.add('hidden');
+          }
+
+          // OTP numéro
+          const dateStr = (itv.gardeDate || '').replace(/-/g, '');
+          document.getElementById('modal-itv-prefix').textContent = dateStr + '_';
+          const digits = String(itv.numero || '').split('_')[1] || '0000';
+          const d = digits.padStart(4,'0').slice(-4).split('');
+          document.getElementById('modal-itv-otp').innerHTML = d.map((ch, i) => `
+            <input type="text" inputmode="numeric" maxlength="1"
+                   value="${ch}" placeholder="0"
+                   data-otp-idx="${i}"
+                   class="w-9 h-10 text-center text-base font-mono font-bold border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 bg-white"
+                   oninput="App.pages.interventions._otpInput(event)"
+                   onkeydown="App.pages.interventions._otpKeydown(event)"
+                   onfocus="setTimeout(()=>this.select(),0)"/>`).join('');
+
+          // Heure
+          document.getElementById('modal-itv-heure').value = itv.heure || '';
+          document.getElementById('modal-itv-heure').oninput = e => { this._editingItv.heure = e.target.value; };
+
+          // Type
+          this._renderTypeSelector();
+
+          // Picker véhicule
+          document.getElementById('modal-itv-add-veh-btn').onclick = () => this._toggleModalPicker();
+          this._renderModalPicker();
+
+          // Véhicules
+          this._renderModalVehicules();
+
+          document.getElementById('modal-itv').classList.remove('hidden');
+        },
+
+        _closeModal() {
+          this._editingItv = null;
+          document.getElementById('modal-itv').classList.add('hidden');
+          document.getElementById('modal-itv-picker').classList.add('hidden');
+        },
+
+        async _saveModal() {
+          const itv = this._editingItv;
+          if (!itv) return;
+          // Commit OTP
+          const inputs = document.querySelectorAll('#modal-itv-otp input');
+          const digits = [...inputs].map(i => i.value || '0').join('').padStart(4,'0');
+          itv.numero = (itv.gardeDate || '').replace(/-/g, '') + '_' + digits;
+
+          const idx = this._data.interventions.findIndex(i => i.id === itv.id);
+          if (idx >= 0) this._data.interventions[idx] = itv;
+          else this._data.interventions.push(itv);
+
+          await API.save('interventions.json', this._data.interventions);
+          this._closeModal();
+          this._renderCurrent();
+          Toast.show('Intervention enregistrée');
+        },
+
+        _deleteFromModal(id) {
+          if (!confirm('Supprimer cette intervention ?')) return;
+          this._data.interventions = this._data.interventions.filter(i => i.id !== id);
+          API.save('interventions.json', this._data.interventions);
+          this._closeModal();
+          this._renderCurrent();
+          Toast.show('Intervention supprimée');
+        },
+
+        _renderTypeSelector() {
+          const current = this._editingItv?.type || null;
+          document.getElementById('modal-itv-types').innerHTML = this.TYPES.map(t => {
+            const active = t.id === current;
+            return `<button type="button"
+                      onclick="App.pages.interventions._selectType('${t.id}')"
+                      class="flex items-center gap-2 px-3 py-2 rounded-xl border-2 font-semibold text-sm transition-all
+                             ${active ? `${t.color} ${t.text} border-transparent shadow-md scale-105` : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'}">
+                      <svg class="w-4 h-4 ${active ? t.text : 'text-gray-400'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        ${t.icon}
+                      </svg>
+                      ${t.label}
+                    </button>`;
+          }).join('');
+        },
+
+        _selectType(typeId) {
+          if (!this._editingItv) return;
+          this._editingItv.type = this._editingItv.type === typeId ? null : typeId;
+          this._renderTypeSelector();
+        },
+
+        _renderModalPicker() {
+          const picker = document.getElementById('modal-itv-picker');
+          const byType = {};
+          this._data.vehicules.filter(v => v.actif !== false).forEach(v => {
+            (byType[v.type] = byType[v.type] || []).push(v);
+          });
+          picker.innerHTML = `<p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Choisir un véhicule</p>` +
+            Object.entries(byType).map(([type, vehs]) => `
+              <div class="mb-3 last:mb-0">
+                <p class="text-xs text-gray-400 font-medium mb-1.5">${this._esc(type)}</p>
+                <div class="flex flex-wrap gap-2">
+                  ${vehs.map(v => `
+                    <button onclick="App.pages.interventions._pickVehicule('${v.id}')"
+                            class="px-3 py-1.5 text-sm font-semibold rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 transition-colors text-gray-700 bg-gray-50">
+                      ${this._esc(v.nom)}
+                    </button>`).join('')}
+                </div>
+              </div>`).join('');
+        },
+
+        _toggleModalPicker() {
+          document.getElementById('modal-itv-picker').classList.toggle('hidden');
+        },
+
+        _renderModalVehicules() {
+          const itv = this._editingItv;
+          if (!itv) return;
+          const gardeAgents = (this._data.rotations.gardes || {})[itv.gardeDate] || [];
+          const agentsOnGarde = gardeAgents
+            .map(ga => this._data.personnel.find(p => p.id === ga.agentId))
+            .filter(Boolean)
+            .sort((a, b) => a.nom.localeCompare(b.nom));
+
+          const container = document.getElementById('modal-itv-vehicules');
+          if (!container) return;
+          if (!(itv.vehicules || []).length) {
+            container.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 border border-dashed border-gray-200 rounded-xl">Aucun véhicule — cliquez sur "Ajouter un véhicule"</p>`;
+            return;
+          }
+          container.innerHTML = itv.vehicules.map(vInst => this._renderVehiculeBlock(itv, vInst, agentsOnGarde)).join('');
+        },
+
+        _nextNumero() { return this._nextNumeroFor(this._currentDate); },
+
+        _nextNumeroFor(date) {
+          const dateStr = (date || new Date().toISOString().slice(0, 10)).replace(/-/g, '');
+          const prefix = dateStr + '_';
+          const existing = (this._data.interventions || [])
+            .map(i => i.numero || '')
+            .filter(n => n.startsWith(prefix))
+            .map(n => parseInt(n.slice(prefix.length), 10))
+            .filter(n => !isNaN(n));
+          const next = existing.length ? Math.max(...existing) + 1 : 1;
+          return prefix + String(next).padStart(4, '0');
+        },
+
+        _renderVehiculeBlock(itv, vInst, agentsOnGarde) {
+          const vDef   = this._data.vehicules.find(v => v.id == vInst.vehiculeId);
+          const modes  = vDef?.modes || [];
+          const modeId = vInst.modeId ?? (modes[0]?.id ?? null);
+          const mode   = modes.find(m => m.id === modeId) || modes[0] || null;
+          const piquets = mode?.piquets || [];
+
+          const agentOptions = agentsOnGarde.map(a =>
+            `<option value="${a.id}">${this._esc(a.grade + ' ' + a.nom + ' ' + a.prenom)}</option>`
+          ).join('');
+
+          // Onglets modes
+          const modeTabs = modes.length > 1 ? `
+            <div class="flex gap-1 px-4 pt-3 pb-0">
+              ${modes.map(m => {
+                const active = m.id === modeId;
+                return `<button onclick="App.pages.interventions._setMode('${vInst.instanceId}',${m.id})"
+                                class="px-3 py-1 text-xs font-semibold rounded-t-lg border border-b-0 transition-colors
+                                       ${active ? 'bg-white border-gray-200 text-blue-600' : 'bg-gray-100 border-gray-100 text-gray-500 hover:text-gray-700'}">
+                          ${this._esc(m.nom)}
+                        </button>`;
+              }).join('')}
+            </div>` : '';
+
+          // Lignes équipage : piquets d'abord, puis agents extra
+          const piquet_rows = piquets.map((piquet, pidx) => {
+            const eq = (vInst.equipage || []).find(e => e.poste === piquet.nom) || { agentId: '', poste: piquet.nom };
+            const eqIdx = (vInst.equipage || []).findIndex(e => e.poste === piquet.nom);
+            return `
+              <tr class="border-b border-gray-50 last:border-0">
+                <td class="py-2 pr-3 w-28">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-xs font-bold text-gray-700">${this._esc(piquet.nom)}</span>
+                    ${piquet.obligatoire
+                      ? `<span class="text-xs bg-red-100 text-red-600 font-semibold px-1.5 py-0.5 rounded">Requis</span>`
+                      : `<span class="text-xs bg-gray-100 text-gray-400 font-medium px-1.5 py-0.5 rounded">Opt.</span>`}
+                  </div>
+                </td>
+                <td class="py-2">
+                  <select class="w-full border border-gray-200 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+                          onchange="App.pages.interventions._updateEquipageByPoste('${vInst.instanceId}','${this._esc(piquet.nom)}',this.value)">
+                    <option value="">— Agent —</option>
+                    ${agentOptions.replace(`value="${eq.agentId}"`, `value="${eq.agentId}" selected`)}
+                  </select>
+                </td>
+                <td class="py-2 pl-2 w-6">
+                  ${eq.agentId ? `<button onclick="App.pages.interventions._updateEquipageByPoste('${vInst.instanceId}','${this._esc(piquet.nom)}','')"
+                          class="text-gray-300 hover:text-red-500 transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </button>` : ''}
+                </td>
+              </tr>`;
+          }).join('');
+
+          // Agents extra (poste libre, non lié à un piquet)
+          const extraEquipage = (vInst.equipage || []).filter(e => !piquets.find(p => p.nom === e.poste));
+          const extra_rows = extraEquipage.map((eq, xidx) => {
+            const globalIdx = (vInst.equipage || []).indexOf(eq);
+            const allPostes = [...new Set(piquets.map(p => p.nom))];
+            const posteOpts = allPostes.map(p => `<option value="${this._esc(p)}">${this._esc(p)}</option>`).join('');
+            return `
+              <tr class="border-b border-gray-50 last:border-0 bg-blue-50/30">
+                <td class="py-2 pr-3 w-28">
+                  <input type="text" value="${this._esc(eq.poste)}" placeholder="Poste libre"
+                         class="w-full border border-gray-200 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400 bg-white"
+                         oninput="App.pages.interventions._updateEquipage('${vInst.instanceId}',${globalIdx},'poste',this.value)"/>
+                </td>
+                <td class="py-2">
+                  <select class="w-full border border-gray-200 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+                          onchange="App.pages.interventions._updateEquipage('${vInst.instanceId}',${globalIdx},'agentId',this.value)">
+                    <option value="">— Agent —</option>
+                    ${agentOptions.replace(`value="${eq.agentId}"`, `value="${eq.agentId}" selected`)}
+                  </select>
+                </td>
+                <td class="py-2 pl-2 w-6">
+                  <button onclick="App.pages.interventions._removeEquipage('${vInst.instanceId}',${globalIdx})"
+                          class="text-gray-300 hover:text-red-500 transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </button>
+                </td>
+              </tr>`;
+          }).join('');
+
+          return `
+            <div class="bg-white rounded-xl border border-gray-200 mb-3 overflow-hidden" id="vitv-${vInst.instanceId}">
+              <!-- En-tête véhicule -->
+              <div class="flex items-center gap-3 px-4 py-2.5 bg-sag-navy">
+                <svg class="w-4 h-4 text-sag-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 17a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4zM3 17V9l4-6h10l4 6v8M3 13h18"/>
+                </svg>
+                <span class="text-sm font-bold text-white flex-1">${this._esc(vDef?.nom || '—')}</span>
+                <span class="text-xs text-sag-gold/80 font-medium">${this._esc(vDef?.type || '')}</span>
+                <button onclick="App.pages.interventions._removeVehicule('${vInst.instanceId}')"
+                        class="text-white/40 hover:text-red-400 transition-colors ml-2 shrink-0">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Onglets modes -->
+              ${modeTabs}
+
+              <!-- Tableau équipage -->
+              <div class="px-4 pb-3 ${modes.length > 1 ? 'pt-3 border-t border-gray-200' : 'pt-3'}">
+                ${piquets.length ? `
+                <table class="w-full mb-2">
+                  <thead>
+                    <tr class="text-xs text-gray-400 uppercase tracking-wide border-b border-gray-100">
+                      <th class="text-left pb-2 font-semibold w-28">Poste</th>
+                      <th class="text-left pb-2 font-semibold">Agent</th>
+                      <th class="w-6"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${piquet_rows}
+                    ${extra_rows}
+                  </tbody>
+                </table>` : `<p class="text-xs text-gray-400 italic mb-2">Aucun piquet défini pour ce mode</p>`}
+                <button onclick="App.pages.interventions._addExtraAgent('${vInst.instanceId}')"
+                        class="text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 transition-colors">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                  </svg>
+                  Agent supplémentaire
+                </button>
+              </div>
+            </div>`;
+        },
+
+        _otpInput(e) {
+          const input = e.target;
+          const idx   = parseInt(input.dataset.otpIdx, 10);
+          const val   = input.value.replace(/\D/g, '').slice(-1);
+          input.value = val;
+          if (val) {
+            const next = document.querySelector(`#modal-itv-otp [data-otp-idx="${idx + 1}"]`);
+            if (next) next.focus();
+          }
+        },
+
+        _otpKeydown(e) {
+          const input = e.target;
+          const idx   = parseInt(input.dataset.otpIdx, 10);
+          if (e.key === 'Backspace' && !input.value) {
+            const prev = document.querySelector(`#modal-itv-otp [data-otp-idx="${idx - 1}"]`);
+            if (prev) { prev.value = ''; prev.focus(); }
+          } else if (e.key === 'ArrowLeft') {
+            document.querySelector(`#modal-itv-otp [data-otp-idx="${idx - 1}"]`)?.focus();
+          } else if (e.key === 'ArrowRight') {
+            document.querySelector(`#modal-itv-otp [data-otp-idx="${idx + 1}"]`)?.focus();
+          }
+        },
+
+        _pickVehicule(vehiculeId) {
+          const itv = this._editingItv;
+          if (!itv) return;
+          const vDef  = this._data.vehicules.find(v => v.id == vehiculeId);
+          const mode  = vDef?.modes?.[0] || null;
+          itv.vehicules = itv.vehicules || [];
+          itv.vehicules.push({
+            instanceId: Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+            vehiculeId: Number(vehiculeId) || vehiculeId,
+            nom: vDef?.nom || '',
+            modeId: mode?.id ?? null,
+            equipage: (mode?.piquets || []).map(p => ({ poste: p.nom, agentId: '' })),
+          });
+          document.getElementById('modal-itv-picker').classList.add('hidden');
+          this._renderModalVehicules();
+        },
+
+        _removeVehicule(instanceId) {
+          const itv = this._editingItv;
+          if (!itv) return;
+          itv.vehicules = (itv.vehicules || []).filter(v => v.instanceId !== instanceId);
+          this._renderModalVehicules();
+        },
+
+        _setMode(instanceId, modeId) {
+          const itv   = this._editingItv;
+          const vInst = (itv?.vehicules || []).find(v => v.instanceId === instanceId);
+          if (!vInst) return;
+          const vDef  = this._data.vehicules.find(v => v.id == vInst.vehiculeId);
+          const mode  = (vDef?.modes || []).find(m => m.id === modeId);
+          if (!mode) return;
+          vInst.modeId = modeId;
+          const newEquipage = (mode.piquets || []).map(p => {
+            const existing = vInst.equipage.find(e => e.poste === p.nom);
+            return { poste: p.nom, agentId: existing?.agentId || '' };
+          });
+          const extras = vInst.equipage.filter(e => !(mode.piquets || []).find(p => p.nom === e.poste));
+          vInst.equipage = [...newEquipage, ...extras];
+          this._renderModalVehicules();
+        },
+
+        _updateEquipageByPoste(instanceId, poste, agentId) {
+          const itv   = this._editingItv;
+          const vInst = (itv?.vehicules || []).find(v => v.instanceId === instanceId);
+          if (!vInst) return;
+          const entry = vInst.equipage.find(e => e.poste === poste);
+          if (entry) entry.agentId = agentId;
+          else vInst.equipage.push({ poste, agentId });
+        },
+
+        _addExtraAgent(instanceId) {
+          const itv   = this._editingItv;
+          const vInst = (itv?.vehicules || []).find(v => v.instanceId === instanceId);
+          if (!vInst) return;
+          vInst.equipage.push({ poste: '', agentId: '' });
+          this._renderModalVehicules();
+        },
+
+        _removeEquipage(instanceId, idx) {
+          const itv   = this._editingItv;
+          const vInst = (itv?.vehicules || []).find(v => v.instanceId === instanceId);
+          if (!vInst) return;
+          vInst.equipage.splice(idx, 1);
+          this._renderModalVehicules();
+        },
+
+        _updateEquipage(instanceId, idx, field, value) {
+          const itv   = this._editingItv;
+          const vInst = (itv?.vehicules || []).find(v => v.instanceId === instanceId);
+          if (!vInst || !vInst.equipage[idx]) return;
+          vInst.equipage[idx][field] = value;
+        },
+
+        _esc(s) {
+          return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        },
+      },
+
+      // ── Debug ──────────────────────────────────────────
+      debug: {
+        async init() {
+          const container = document.getElementById('debug-container');
+          if (container) await DebugView.render(container);
+        }
+      },
+
+      // ── Paramètres ─────────────────────────────────────
+      parametres: {
+
+        async init() {
+          // Chargement des données
+          [App.data.vehicules, App.data.uv, App.data.equipes] = await Promise.all([
+            API.get('vehicules.json'),
+            API.get('uv.json'),
+            API.get('equipes.json')
+          ]);
+
+          // Onglets
+          const tabs  = document.querySelectorAll('.param-tab');
+          const panels = document.querySelectorAll('.param-panel');
+          const activate = (name) => {
+            tabs.forEach(t => {
+              const active = t.dataset.tab === name;
+              t.classList.toggle('border-sag-gold', active);
+              t.classList.toggle('text-sag-gold', active);
+              t.classList.toggle('border-transparent', !active);
+              t.classList.toggle('text-gray-400', !active);
+            });
+            panels.forEach(p => p.classList.toggle('hidden', p.id !== `tab-${name}`));
+          };
+          tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+          activate('vehicules');
+
+          this.veh.render();
+          this.uv.render();
+          this.eq.render();
+        },
+
+        // ─── Véhicules ──────────────────────────────────
+        veh: {
+          _modes: [],       // modes en cours d'édition
+          _activeMode: 0,   // index du mode affiché
+
+          render() {
+            const list = App.data.vehicules || [];
+            const el   = document.getElementById('veh-list');
+            if (!list.length) {
+              el.innerHTML = `<div class="bg-white rounded-xl p-10 text-center border border-dashed border-gray-200">
+                <p class="text-gray-300 text-sm">Aucun véhicule — cliquez sur "Ajouter"</p></div>`;
+              return;
+            }
+            el.innerHTML = list.map(v => {
+              const modes = v.modes || [];
+              const totalPiquets = modes.reduce((s, m) => s + (m.piquets||[]).length, 0);
+              return `
+              <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <!-- En-tête véhicule -->
+                <div class="flex items-center gap-4 px-5 py-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-sag-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 17a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4zM3 17V9l4-6h10l4 6v8M3 13h18"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-gray-800 text-sm">${v.nom}</p>
+                    <p class="text-gray-400 text-xs">${v.type} · ${modes.length} mode(s) · ${totalPiquets} piquet(s) total</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-full text-xs font-medium ${v.actif ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-400'}">
+                    ${v.actif ? 'Actif' : 'Inactif'}
+                  </span>
+                  <button onclick="App.pages.parametres.veh.openEdit(${v.id})"
+                          class="p-1.5 text-gray-300 hover:text-sag-gold rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                    </svg>
+                  </button>
+                  <button onclick="App.pages.parametres.veh.delete(${v.id})"
+                          class="p-1.5 text-gray-300 hover:text-red-400 rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                    </svg>
+                  </button>
+                </div>
+                <!-- Modes et piquets -->
+                ${modes.length ? `
+                <div class="border-t border-gray-50 divide-y divide-gray-50">
+                  ${modes.map(m => {
+                    const allUV = App.data.uv || [];
+                    const obl = (m.piquets||[]).filter(p => p.obligatoire !== false);
+                    const fac = (m.piquets||[]).filter(p => p.obligatoire === false);
+                    const renderPiquet = p => {
+                      const uvs = (p.uvRequises||[]).map(id => allUV.find(u=>u.id===id)).filter(Boolean);
+                      const uvHtml = uvs.length
+                        ? ` <span class="text-blue-400 font-mono text-[10px]">[${uvs.map(u=>u.code).join(', ')}]</span>`
+                        : '';
+                      return p.obligatoire !== false
+                        ? `<span class="px-2 py-0.5 bg-gray-700 text-white rounded-full text-xs font-medium" title="Obligatoire">${p.nom}${uvHtml}</span>`
+                        : `<span class="px-2 py-0.5 border border-dashed border-gray-300 text-gray-400 rounded-full text-xs" title="Facultatif">${p.nom}${uvHtml}</span>`;
+                    };
+                    return `
+                    <div class="px-5 py-2.5">
+                      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5">${m.nom}</p>
+                      <div class="flex flex-wrap gap-1.5 items-center">
+                        ${obl.map(renderPiquet).join('')}
+                        ${fac.map(renderPiquet).join('')}
+                        ${obl.length || fac.length ? `<span class="ml-auto text-gray-300 text-xs shrink-0">${obl.length} obl.${fac.length ? ` · ${fac.length} fac.` : ''}</span>` : ''}
+                      </div>
+                    </div>`;
+                  }).join('')}
+                </div>` : ''}
+              </div>`;
+            }).join('');
+          },
+
+          _openModal(title, v) {
+            document.getElementById('modal-veh-title').textContent = title;
+            document.getElementById('veh-id').value      = v.id || '';
+            document.getElementById('veh-nom').value     = v.nom || '';
+            document.getElementById('veh-type').value    = v.type || 'VSAV';
+            document.getElementById('veh-actif').checked = v.actif !== false;
+            // Copie profonde des modes ; si ancien format (piquets directs), on migre à la volée
+            if (v.modes) {
+              this._modes = v.modes.map(m => ({ ...m, piquets: m.piquets.map(p => ({ ...p })) }));
+            } else if (v.piquets) {
+              this._modes = [{ id: Date.now(), nom: 'Standard', piquets: v.piquets.map(p => ({ ...p })) }];
+            } else {
+              this._modes = [{ id: Date.now(), nom: 'Standard', piquets: [] }];
+            }
+            this._activeMode = 0;
+            this._renderModes();
+            document.getElementById('modal-veh').classList.remove('hidden');
+          },
+
+          openAdd()    { this._openModal('Nouveau véhicule', {}); },
+          openEdit(id) {
+            const v = (App.data.vehicules||[]).find(x => x.id === id);
+            if (v) this._openModal('Modifier le véhicule', v);
+          },
+
+          _renderModes() {
+            const tabs = document.getElementById('mode-tabs');
+            tabs.innerHTML = this._modes.map((m, i) => `
+              <button onclick="App.pages.parametres.veh.switchMode(${i})"
+                      class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors
+                             ${i === this._activeMode
+                               ? 'bg-sag-navy text-white'
+                               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}">
+                ${m.nom || `Mode ${i+1}`}
+              </button>
+            `).join('');
+
+            const m = this._modes[this._activeMode];
+            if (!m) return;
+            document.getElementById('mode-nom-input').value = m.nom;
+            // Cacher bouton suppression si dernier mode
+            document.getElementById('mode-delete-btn').style.display =
+              this._modes.length > 1 ? 'block' : 'none';
+            this._renderPiquets();
+          },
+
+          switchMode(i) {
+            this._activeMode = i;
+            this._renderModes();
+          },
+
+          renameMode(val) {
+            if (this._modes[this._activeMode]) {
+              this._modes[this._activeMode].nom = val;
+              // Mettre à jour juste le texte du tab sans re-render complet
+              const btns = document.querySelectorAll('#mode-tabs button');
+              if (btns[this._activeMode]) btns[this._activeMode].textContent = val || `Mode ${this._activeMode+1}`;
+            }
+          },
+
+          addMode() {
+            this._modes.push({ id: Date.now(), nom: 'Nouveau mode', piquets: [] });
+            this._activeMode = this._modes.length - 1;
+            this._renderModes();
+            document.getElementById('mode-nom-input').focus();
+            document.getElementById('mode-nom-input').select();
+          },
+
+          removeMode() {
+            if (this._modes.length <= 1) return;
+            if (!confirm(`Supprimer le mode "${this._modes[this._activeMode].nom}" ?`)) return;
+            this._modes.splice(this._activeMode, 1);
+            this._activeMode = Math.min(this._activeMode, this._modes.length - 1);
+            this._renderModes();
+          },
+
+          _renderPiquets() {
+            const m      = this._modes[this._activeMode];
+            const list   = m ? (m.piquets || []) : [];
+            const allUV  = App.data.uv || [];
+            const emptyEl = document.getElementById('piquets-empty');
+            emptyEl.classList.toggle('hidden', list.length > 0);
+            const am = this._activeMode;
+            document.getElementById('piquets-list').innerHTML = list.map((p, i) => {
+              const obl         = p.obligatoire !== false;
+              const uvRequises  = p.uvRequises || [];
+              const assignedUVs = uvRequises.map(id => allUV.find(u => u.id === id)).filter(Boolean);
+              const availableUVs = allUV.filter(u => !uvRequises.includes(u.id));
+              return `
+              <div class="border border-gray-100 rounded-lg p-2 space-y-1.5 bg-gray-50/60">
+                <!-- Ligne 1 : nom + OBL/FAC + suppr -->
+                <div class="flex items-center gap-2">
+                  <input type="text" value="${p.nom}"
+                         oninput="App.pages.parametres.veh._modes[${am}].piquets[${i}].nom=this.value"
+                         placeholder="Nom du rôle…"
+                         class="flex-1 px-2.5 py-1 rounded border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sag-gold"/>
+                  <button onclick="App.pages.parametres.veh.toggleObligatoire(${i})"
+                          title="${obl ? 'Obligatoire → cliquer pour rendre facultatif' : 'Facultatif → cliquer pour rendre obligatoire'}"
+                          class="shrink-0 px-2 py-1 rounded text-xs font-semibold border transition-colors
+                                 ${obl ? 'bg-gray-700 text-white border-gray-700 hover:bg-gray-500'
+                                       : 'bg-white text-gray-400 border-dashed border-gray-300 hover:border-gray-400'}">
+                    ${obl ? 'OBL' : 'FAC'}
+                  </button>
+                  <button onclick="App.pages.parametres.veh.removePiquet(${i})"
+                          class="p-1 text-gray-300 hover:text-red-400 rounded transition-colors shrink-0">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+                <!-- Ligne 2 : UV requises -->
+                <div class="flex flex-wrap gap-1 items-center pl-0.5 min-h-[22px]">
+                  ${assignedUVs.map(u => `
+                    <span class="inline-flex items-center gap-0.5 pl-2 pr-1 py-0.5 bg-blue-50 text-blue-700 border border-blue-100 rounded text-xs font-mono">
+                      ${u.code}
+                      <button onclick="App.pages.parametres.veh.removeUVfromPiquet(${i},${u.id})"
+                              class="ml-0.5 text-blue-300 hover:text-red-400 leading-none font-bold text-sm transition-colors">×</button>
+                    </span>
+                  `).join('')}
+                  ${availableUVs.length ? `
+                  <select onchange="App.pages.parametres.veh.addUVtoPiquet(${i},this)"
+                          class="text-xs px-1.5 py-0.5 rounded border border-dashed border-gray-300 text-gray-400 bg-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-sag-gold max-w-[130px]">
+                    <option value="">+ UV requise</option>
+                    ${availableUVs.map(u => `<option value="${u.id}">${u.code} — ${u.libelle}</option>`).join('')}
+                  </select>` : `<span class="text-gray-300 text-xs italic">toutes les UV assignées</span>`}
+                </div>
+              </div>`;
+            }).join('');
+          },
+
+          addUVtoPiquet(piquetIdx, select) {
+            const uvId = parseInt(select.value);
+            if (!uvId) return;
+            const p = this._modes[this._activeMode].piquets[piquetIdx];
+            if (!p.uvRequises) p.uvRequises = [];
+            if (!p.uvRequises.includes(uvId)) p.uvRequises.push(uvId);
+            this._renderPiquets();
+          },
+
+          removeUVfromPiquet(piquetIdx, uvId) {
+            const p = this._modes[this._activeMode].piquets[piquetIdx];
+            if (!p.uvRequises) return;
+            p.uvRequises = p.uvRequises.filter(id => id !== uvId);
+            this._renderPiquets();
+          },
+
+          toggleObligatoire(i) {
+            const p = this._modes[this._activeMode].piquets[i];
+            p.obligatoire = p.obligatoire === false;
+            this._renderPiquets();
+          },
+
+          addPiquet() {
+            const m = this._modes[this._activeMode];
+            if (!m) return;
+            m.piquets.push({ id: Date.now(), nom: '', obligatoire: true, uvRequises: [] });
+            this._renderPiquets();
+            const inputs = document.querySelectorAll('#piquets-list input[type=text]');
+            if (inputs.length) inputs[inputs.length - 1].focus();
+          },
+
+          removePiquet(i) {
+            this._modes[this._activeMode].piquets.splice(i, 1);
+            this._renderPiquets();
+          },
+
+          async save() {
+            const nom = document.getElementById('veh-nom').value.trim();
+            if (!nom) { Toast.show('Nom requis', 'err'); return; }
+            if (!this._modes.length) { Toast.show('Au moins un mode requis', 'err'); return; }
+
+            const entry = {
+              id:    document.getElementById('veh-id').value
+                       ? parseInt(document.getElementById('veh-id').value)
+                       : Date.now(),
+              nom,
+              type:  document.getElementById('veh-type').value,
+              actif: document.getElementById('veh-actif').checked,
+              modes: this._modes.map(m => ({
+                id:     m.id || Date.now(),
+                nom:    m.nom.trim() || 'Standard',
+                piquets: (m.piquets || [])
+                  .filter(p => p.nom.trim())
+                  .map((p, i) => ({
+                    id:          p.id || i + 1,
+                    nom:         p.nom.trim(),
+                    obligatoire: p.obligatoire !== false,
+                    uvRequises:  p.uvRequises || []
+                  }))
+              }))
+            };
+
+            const list = App.data.vehicules || [];
+            const idx  = list.findIndex(v => v.id === entry.id);
+            if (idx >= 0) list[idx] = entry; else list.push(entry);
+            App.data.vehicules = list;
+
+            await API.save('vehicules.json', list);
+            document.getElementById('modal-veh').classList.add('hidden');
+            this.render();
+            Toast.show('Véhicule enregistré');
+          },
+
+          async delete(id) {
+            if (!confirm('Supprimer ce véhicule ?')) return;
+            App.data.vehicules = (App.data.vehicules || []).filter(v => v.id !== id);
+            await API.save('vehicules.json', App.data.vehicules);
+            this.render();
+            Toast.show('Véhicule supprimé');
+          }
+        },
+
+        // ─── UV ─────────────────────────────────────────
+        uv: {
+          render() {
+            const list = App.data.uv || [];
+            const tbody = document.getElementById('uv-list');
+            if (!list.length) {
+              tbody.innerHTML = `<tr><td colspan="3" class="text-center py-8 text-gray-300">Aucune UV</td></tr>`;
+              return;
+            }
+            tbody.innerHTML = list.map(u => `
+              <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                <td class="px-4 py-3">
+                  <span class="px-2.5 py-0.5 bg-blue-50 text-blue-700 rounded font-mono text-xs font-semibold">${u.code}</span>
+                </td>
+                <td class="px-4 py-3 text-gray-700">${u.libelle}</td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-1 justify-end">
+                    <button onclick="App.pages.parametres.uv.openEdit(${u.id})"
+                            class="p-1.5 text-gray-300 hover:text-sag-gold rounded transition-colors">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                      </svg>
+                    </button>
+                    <button onclick="App.pages.parametres.uv.delete(${u.id})"
+                            class="p-1.5 text-gray-300 hover:text-red-400 rounded transition-colors">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            `).join('');
+          },
+
+          openAdd() {
+            document.getElementById('modal-uv-title').textContent = 'Nouvelle UV';
+            document.getElementById('uv-id').value = '';
+            document.getElementById('uv-code').value = '';
+            document.getElementById('uv-libelle').value = '';
+            document.getElementById('modal-uv').classList.remove('hidden');
+          },
+
+          openEdit(id) {
+            const u = (App.data.uv||[]).find(x => x.id === id);
+            if (!u) return;
+            document.getElementById('modal-uv-title').textContent = 'Modifier UV';
+            document.getElementById('uv-id').value      = u.id;
+            document.getElementById('uv-code').value    = u.code;
+            document.getElementById('uv-libelle').value = u.libelle;
+            document.getElementById('modal-uv').classList.remove('hidden');
+          },
+
+          async save() {
+            const code    = document.getElementById('uv-code').value.trim().toUpperCase();
+            const libelle = document.getElementById('uv-libelle').value.trim();
+            if (!code || !libelle) { Toast.show('Code et libellé requis', 'err'); return; }
+
+            const entry = {
+              id:      document.getElementById('uv-id').value
+                         ? parseInt(document.getElementById('uv-id').value)
+                         : Date.now(),
+              code, libelle
+            };
+            const list = App.data.uv || [];
+            const idx  = list.findIndex(u => u.id === entry.id);
+            if (idx >= 0) list[idx] = entry; else list.push(entry);
+            App.data.uv = list;
+
+            await API.save('uv.json', list);
+            document.getElementById('modal-uv').classList.add('hidden');
+            this.render();
+            Toast.show('UV enregistrée');
+          },
+
+          async delete(id) {
+            if (!confirm('Supprimer cette UV ?')) return;
+            App.data.uv = (App.data.uv||[]).filter(u => u.id !== id);
+            await API.save('uv.json', App.data.uv);
+            this.render();
+            Toast.show('UV supprimée');
+          }
+        },
+
+        // ─── Équipes ────────────────────────────────────
+        eq: {
+          render() {
+            const list  = App.data.equipes || [];
+            const tbody = document.getElementById('eq-list');
+            if (!list.length) {
+              tbody.innerHTML = `<tr><td colspan="4" class="text-center py-8 text-gray-300">Aucune équipe</td></tr>`;
+              return;
+            }
+            tbody.innerHTML = list.map(e => `
+              <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                <td class="px-4 py-3">
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
+                        style="background:${e.couleur}">${e.code}</span>
+                </td>
+                <td class="px-4 py-3 text-gray-700 font-medium">${e.nom}</td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full inline-block border border-gray-200"
+                          style="background:${e.couleur}"></span>
+                    <span class="text-gray-400 text-xs font-mono">${e.couleur}</span>
+                  </div>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-1 justify-end">
+                    <button onclick="App.pages.parametres.eq.openEdit(${e.id})"
+                            class="p-1.5 text-gray-300 hover:text-sag-gold rounded transition-colors">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                      </svg>
+                    </button>
+                    <button onclick="App.pages.parametres.eq.delete(${e.id})"
+                            class="p-1.5 text-gray-300 hover:text-red-400 rounded transition-colors">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            `).join('');
+          },
+
+          openAdd() {
+            document.getElementById('modal-eq-title').textContent = 'Nouvelle équipe';
+            document.getElementById('eq-id').value     = '';
+            document.getElementById('eq-code').value   = '';
+            document.getElementById('eq-nom').value    = '';
+            document.getElementById('eq-couleur').value = '#1A3A6B';
+            document.getElementById('modal-eq').classList.remove('hidden');
+          },
+
+          openEdit(id) {
+            const e = (App.data.equipes||[]).find(x => x.id === id);
+            if (!e) return;
+            document.getElementById('modal-eq-title').textContent = 'Modifier l\'équipe';
+            document.getElementById('eq-id').value      = e.id;
+            document.getElementById('eq-code').value    = e.code;
+            document.getElementById('eq-nom').value     = e.nom;
+            document.getElementById('eq-couleur').value = e.couleur || '#1A3A6B';
+            document.getElementById('modal-eq').classList.remove('hidden');
+          },
+
+          async save() {
+            const code = document.getElementById('eq-code').value.trim().toUpperCase();
+            const nom  = document.getElementById('eq-nom').value.trim();
+            if (!code || !nom) { Toast.show('Code et nom requis', 'err'); return; }
+
+            const entry = {
+              id:      document.getElementById('eq-id').value
+                         ? parseInt(document.getElementById('eq-id').value)
+                         : Date.now(),
+              code, nom,
+              couleur: document.getElementById('eq-couleur').value
+            };
+            const list = App.data.equipes || [];
+            const idx  = list.findIndex(e => e.id === entry.id);
+            if (idx >= 0) list[idx] = entry; else list.push(entry);
+            App.data.equipes = list;
+
+            await API.save('equipes.json', list);
+            document.getElementById('modal-eq').classList.add('hidden');
+            this.render();
+            Toast.show('Équipe enregistrée');
+          },
+
+          async delete(id) {
+            if (!confirm('Supprimer cette équipe ?')) return;
+            App.data.equipes = (App.data.equipes||[]).filter(e => e.id !== id);
+            await API.save('equipes.json', App.data.equipes);
+            this.render();
+            Toast.show('Équipe supprimée');
+          }
+        }
+      }
+    },
+
+    updateGroupeBadge() {
+      const grp = groupeToday(this.data.rotations);
+      const el = document.getElementById('groupe-garde');
+      if (el) {
+        el.textContent = grp || '—';
+        el.className = `px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wide ${grp ? `badge-${grp}` : 'bg-gray-100 text-gray-400'}`;
+      }
+    }
+  };
+
+  // ─── Bootstrap ───────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    // Date topbar
+    document.getElementById('current-date').textContent =
+      new Date().toLocaleDateString('fr-FR', { day:'numeric', month:'short', year:'numeric' });
+
+    // Chargement des données
+    await App.loadAll();
+    App.updateGroupeBadge();
+
+    // Navigation par liens
+    document.body.addEventListener('click', e => {
+      const link = e.target.closest('[data-page]');
+      if (!link) return;
+      e.preventDefault();
+      App.navigate(link.dataset.page);
+    });
+
+    // Toggle sidebar
+    document.getElementById('btn-toggle-sidebar').addEventListener('click', () => {
+      document.body.classList.toggle('collapsed');
+    });
+
+    // Page initiale
+    App.navigate('dashboard');
+  });
+  </script>
+  <script src="debug.js"></script>
+</body>
+</html>

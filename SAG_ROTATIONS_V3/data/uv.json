@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1778684697436,
+    "code": "EQ SUAP",
+    "libelle": "Équipier SUAP"
+  },
+  {
+    "id": 1778684705212,
+    "code": "EQ SR",
+    "libelle": "Équipier SR"
+  },
+  {
+    "id": 1778684716261,
+    "code": "EQ OD",
+    "libelle": "Équipier OD"
+  },
+  {
+    "id": 1778684728440,
+    "code": "EQ INC",
+    "libelle": "Équipier INC"
+  },
+  {
+    "id": 1778684742002,
+    "code": "COND VL",
+    "libelle": "Conducteur VL"
+  },
+  {
+    "id": 1778684751100,
+    "code": "COND PL",
+    "libelle": "Conducteur PL"
+  },
+  {
+    "id": 1778684763332,
+    "code": "COND VSAVM",
+    "libelle": "Conducteur VSAVM"
+  },
+  {
+    "id": 1778684779434,
+    "code": "COD 1",
+    "libelle": "Conducteur pompe"
+  },
+  {
+    "id": 1778684789478,
+    "code": "COD 2",
+    "libelle": "Conducteur tout terrain"
+  },
+  {
+    "id": 1778684796857,
+    "code": "COD 4",
+    "libelle": "Conducteur bateau"
+  },
+  {
+    "id": 1778684810005,
+    "code": "COD 6",
+    "libelle": "Conducteur échelle"
+  },
+  {
+    "id": 1778684818262,
+    "code": "COD ROBOT",
+    "libelle": "Conducteur robot"
+  },
+  {
+    "id": 1778684829184,
+    "code": "COD BEA",
+    "libelle": "Manipulateur BEA"
+  },
+  {
+    "id": 1778684840712,
+    "code": "CE INC",
+    "libelle": "Chef d'équipe INC"
+  },
+  {
+    "id": 1778684853216,
+    "code": "CA SR",
+    "libelle": "Chef d'agrès SR"
+  },
+  {
+    "id": 1778684858636,
+    "code": "CA OD",
+    "libelle": "Chef d'agrès OD"
+  },
+  {
+    "id": 1778684866842,
+    "code": "CA SUAP",
+    "libelle": "Chef d'agrès SUAP"
+  },
+  {
+    "id": 1778684874396,
+    "code": "CA INC",
+    "libelle": "Chef d'agrès INC"
+  },
+  {
+    "id": 1778684880486,
+    "code": "CA MEA",
+    "libelle": "Chef d'agrès MEA"
+  },
+  {
+    "id": 1778684886515,
+    "code": "CA BEA",
+    "libelle": "Chef d'agrès BEA"
+  },
+  {
+    "id": 1778684898089,
+    "code": "FDF 1",
+    "libelle": "FDF 1"
+  },
+  {
+    "id": 1778684901749,
+    "code": "FDF 2",
+    "libelle": "FDF 2"
+  },
+  {
+    "id": 1778684906067,
+    "code": "FDF 3",
+    "libelle": "FDF 3"
+  }
+]
